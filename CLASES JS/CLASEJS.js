@@ -149,5 +149,13 @@
 //     vehiculo.encender();
 //   }
 
+    //Math
 
-
+ // round = redondear numero
+ //max = devuelve el maximo de varios numero
+  // ceil redondea hacia arriba
+  // floor redondea hacia abajo
+// sqrt raiz cuadrada
+// cbrt raiz cubica
+// random numero random del 0 al 1
+console.log(new Date())
