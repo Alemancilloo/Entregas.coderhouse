@@ -1,0 +1,6 @@
+.redes:hover {
+    color: rgba(255, 0, 0, 0.736);
+}
+.click:hover{
+    color: rgba(255, 0, 0, 0.736) !important;
+}
