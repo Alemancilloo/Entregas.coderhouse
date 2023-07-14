@@ -37,7 +37,7 @@ if(usuario == nombreProgramador || usuario == nombreTutor)
                     alert("El precio de la mudanza hasta Concepcion seria: 1500$ USD");
                     alert("Gracias por cortizar");
                     break;
-                case "MENDOZA":
+                case "3":
                     alert("El precio de la mudanza hasta Mendoza seria: 2500$ USD");
                     alert("Gracias por cortizar");
                     break;
