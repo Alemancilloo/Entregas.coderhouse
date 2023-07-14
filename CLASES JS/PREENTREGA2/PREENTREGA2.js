@@ -15,9 +15,11 @@ else{
         alert("Naciste en " + nacimiento + ", eres mayor de edad" + ". PUEDES INGRESAR =)")
     }       
     else{
-        alert("Naciste en " + nacimiento + ", eres menor de edad" + ". NO PUEDES INGRESAR >=(")
+        alert("Naciste en " + nacimiento + ", eres menor de edad" + ". NO PUEDES INGRESAR >=(");
+        window.location.href = "./PREENTREGA2.html";
+        }   
     }
-}
+
 let edad2 = edad;
 for(edad; edad >= 1; edad--){
     console.log("Te saludo " + edad2 + " veces, por tus " + edad2 + " años");
