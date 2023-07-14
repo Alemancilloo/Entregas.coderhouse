@@ -1,6 +1,20 @@
-.redes:hover {
-    color: rgba(255, 0, 0, 0.736);
+* {
+    margin: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .click:hover{
     color: rgba(255, 0, 0, 0.736) !important;
+}
+    /* Edicion de parte superior*/
+.redes  {
+    color: white;
+    background-color: rgb(219, 115, 19);
+    width: 100vw;
+    font-size: 25px;
+    line-height: 2;
+    font-weight: 900;
+    
+}
+.linkinternos{
+    margin: 10px;
 }
