@@ -110,8 +110,6 @@ else {
         });
       }
     } 
-console.log(direccionInicial);
-console.log(direccionFinal);
 
             //  EVALUACION DE SATISFACCION USUARIO (NPS) //
 if (usuario == nombreProgramador || usuario == nombreTutor)
@@ -119,8 +117,19 @@ if (usuario == nombreProgramador || usuario == nombreTutor)
 else {
     experiencia()
     function experiencia() {
-      let exp = prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion");
+      let exp = parseInt(prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion"));
       console.log("La calificacion del usuario fue:", exp);
+
+    nivelNps(exp);
+      function nivelNps(exp){
+      if(exp > 8)
+      console.log("Interaccion Excelente");
+      else if(exp >= 5)
+      console.log("Interaccion Regular");
+      else
+      console.log("Interaccion Pesima");
+      
+    }
     }
 }
             // TRANSCRIPCION DE COTIZACION CLIENTE //
@@ -128,13 +137,14 @@ class cotizante{
   constructor(nombre, edad, direccionInicial, direccionFinal){
     this.nombre = nombre;
     this.edad = edad;
-    this.direccionInicial = direccionInicial;
-    this.direccionFinal = direccionFinal;
+    this.direccionInicial = direcciones[direccionInicial];
+    this.direccionFinal = direcciones[direccionFinal];
   }
     ejecucion() {
-        console.log(this.nombre + " " + this.direccionInicial + " " + this.direccionFinal);
+        console.log(this.nombre + " tu ultima cotizacion fue: desde " + this.direccionInicial + " hasta " + this.direccionFinal);
     }
 }
+            // ULTIMA COTIZACION REALIZADA //
 const cotizacion1 = new cotizante(usuario, edad2, direccionInicial, direccionFinal);
 cotizacion1.ejecucion();
             // TOTAL DE COTIZACIONES REALIZADAS //
