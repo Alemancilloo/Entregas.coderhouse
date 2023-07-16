@@ -37,6 +37,11 @@ const direcciones = {
   2: "PUENTE ALTO",
   3: "VITACURA"
 }
+const valorDireccion = {
+  1: 10890.60,
+  2: 25400.85,
+  3: 15320.24
+}
 
 if (usuario == nombreProgramador || usuario == nombreTutor)
     alert("Que Todo Te Salga......");
@@ -106,7 +111,8 @@ else {
             nombre: usuario,
             edad: edad2,
             direccionInicial: direcciones[direccionInicial],
-            direccionFinal: direcciones[direccionFinal]
+            direccionFinal: direcciones[direccionFinal],
+            costo: Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal])
         });
       }
     } 
@@ -115,11 +121,10 @@ else {
 if (usuario == nombreProgramador || usuario == nombreTutor)
     alert("Muy Bien......");
 else {
-    experiencia()
-    function experiencia() {
-      let exp = parseInt(prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion"));
-      console.log("La calificacion del usuario fue:", exp);
-
+  experiencia()
+  function experiencia() {
+    let exp = parseInt(prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion"));
+    console.log("La calificacion del usuario fue:", exp);
     nivelNps(exp);
       function nivelNps(exp){
       if(exp > 8)
@@ -128,9 +133,8 @@ else {
       console.log("Interaccion Regular");
       else
       console.log("Interaccion Pesima");
-      
     }
-    }
+  }
 }
             // TRANSCRIPCION DE COTIZACION CLIENTE //
 class cotizante{
@@ -139,9 +143,10 @@ class cotizante{
     this.edad = edad;
     this.direccionInicial = direcciones[direccionInicial];
     this.direccionFinal = direcciones[direccionFinal];
+    this.costo = Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal]);
   }
     ejecucion() {
-        console.log(this.nombre + " tu ultima cotizacion fue: desde " + this.direccionInicial + " hasta " + this.direccionFinal);
+        console.log(this.nombre + " tu ultima cotizacion fue: desde " + this.direccionInicial + " hasta " + this.direccionFinal + " con un costo de: " + this.costo);
     }
 }
             // ULTIMA COTIZACION REALIZADA //
@@ -149,4 +154,3 @@ const cotizacion1 = new cotizante(usuario, edad2, direccionInicial, direccionFin
 cotizacion1.ejecucion();
             // TOTAL DE COTIZACIONES REALIZADAS //
 console.log(cotizaciones);
-
