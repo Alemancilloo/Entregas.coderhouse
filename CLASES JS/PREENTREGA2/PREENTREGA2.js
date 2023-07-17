@@ -150,4 +150,8 @@ class cotizante{
 const cotizacion1 = new cotizante(usuario, edad2, direccionInicial, direccionFinal);
 cotizacion1.ejecucion();
             // TOTAL DE COTIZACIONES REALIZADAS //
+const sumaCotizaciones = cotizaciones.map((x) => x.costo);
+const costoTotal = sumaCotizaciones.reduce((numero, valor) => numero + valor, 0);
 console.log(cotizaciones);
+console.log("Total Costo de cotizaciones: " + costoTotal);
+
