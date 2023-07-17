@@ -9,8 +9,15 @@ let edad2 = edad;
 console.log(usuario);
 
             // IDENTIFICACION DE USUARIO  //
-if(usuario == nombreProgramador || usuario == nombreTutor)
+function verificarUsuario(nombre){
+  if(usuario == nombreProgramador || usuario == nombreTutor){
+  return true;
+  }
+  return false;
+}
+if (verificarUsuario(usuario)){
     alert ("Bienvenido Programador Master");
+}
 else{
     edad = parseInt(prompt("¿Cual es tu edad?"));
     console.log(edad);
@@ -23,16 +30,21 @@ else{
         alert("Naciste en " + nacimiento + ", eres menor de edad" + ". NO PUEDES INGRESAR >=(")
         window.location.href = "PREENTREGA2.html";
     }
+  edad2 = edad;
 }
+
 
             // GENERACION DE SOLICITUD DE COTIZACION (DIRECCIONES) //
 let direccionInicial;
 let direccionFinal;
 let salir = " ";
+function obtenerDireccion(direccion){
 const direcciones = {
   1: "SANTIAGO-CENTRO",
   2: "PUENTE ALTO",
   3: "VITACURA"
+};
+return direcciones[direccion] || "Direccion Invalida";
 }
 const valorDireccion = {
   1: 10890.60,
@@ -40,66 +52,22 @@ const valorDireccion = {
   3: 15320.24
 }
 
-if (usuario == nombreProgramador || usuario == nombreTutor)
+if (verificarUsuario(usuario)){
     alert("Que Todo Te Salga......");
+}
 else {
     alert("BIENVENIDO A FLETES EL PANA SPA")
     while (salir !== 0) {
       direccionInicial = parseInt(prompt("Elige el número de opción para tu dirección de CARGA: \n1. SANTIAGO-CENTRO \n2. PUENTE ALTO \n3. VITACURA"));
       direccionFinal = parseInt(prompt("Elige el número de opción para tu dirección de DESCARGA: \n1. SANTIAGO-CENTRO \n2. PUENTE ALTO \n3. VITACURA"));
-        switch (direccionInicial) {
-          case 1:
-            switch (direccionFinal) {
-              case 1:
-                alert("Tu cotización es dentro de la misma comuna de SANTIAGO-CENTRO");
-                break;
-              case 2:
-                alert("Tu cotización es desde SANTIAGO-CENTRO hasta PUENTE ALTO");
-                break;
-              case 3:
-                alert("Tu cotización es desde SANTIAGO-CENTRO hasta VITACURA");
-                break;
-              default:
-                alert("Número de opción de dirección de descarga inválido");
-                break;
-            }
-            break;
-          case 2:
-            switch (direccionFinal) {
-              case 1:
-                alert("Tu cotización es desde PUENTE ALTO hasta SANTIAGO-CENTRO");
-                break;
-              case 2:
-                alert("Tu cotización es dentro de la misma comuna de PUENTE ALTO");
-                break;
-              case 3:
-                alert("Tu cotización es desde PUENTE ALTO hasta VITACURA");
-                break;
-              default:
-                alert("Número de opción de dirección de descarga inválido");
-                break;
-            }
-            break;
-          case 3:
-            switch (direccionFinal) {
-              case 1:
-                alert("Tu cotización es desde VITACURA hasta SANTIAGO-CENTRO");
-                break;
-              case 2:
-                alert("Tu cotización es desde VITACURA hasta PUENTE ALTO");
-                break;
-              case 3:
-                alert("Tu cotización es dentro de la misma comuna de VITACURA");
-                break;
-              default:
-                alert("Número de opción de dirección de descarga inválido");
-                break;
-            }
-            break;
-          default:
-            alert("Número de opción de dirección de carga inválido");
-            break;
-        }
+      const direccionCarga = obtenerDireccion(direccionInicial);
+      const direccionDescarga = obtenerDireccion(direccionFinal);
+      if (direccionCarga === "Direccion Invalida" || direccionDescarga === "Direccion Invalida"){
+      alert("Número de opción de dirección inválido");
+    } 
+    else {
+      alert("Tu cotización es desde " + direccionCarga + " hasta " + direccionDescarga);
+    }
         if (salir !== 0) {
           salir = parseInt(prompt("Elige: \n0. SALIR \n1. VOLVER A COTIZAR"));
         }
@@ -107,16 +75,17 @@ else {
           cotizaciones.push({
             nombre: usuario,
             edad: edad2,
-            direccionInicial: direcciones[direccionInicial],
-            direccionFinal: direcciones[direccionFinal],
+            direccionInicial: direccionCarga,
+            direccionFinal: direccionDescarga,
             costo: Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal])
         });
       }
-    } 
+}
 
             //  EVALUACION DE SATISFACCION USUARIO (NPS) //
-if (usuario == nombreProgramador || usuario == nombreTutor)
+if (verificarUsuario(usuario)){
     alert("Muy Bien......");
+}
 else {
   experiencia()
   function experiencia() {
@@ -137,9 +106,9 @@ else {
 class cotizante{
   constructor(nombre, edad, direccionInicial, direccionFinal){
     this.nombre = nombre;
-    this.edad = edad;
-    this.direccionInicial = direcciones[direccionInicial];
-    this.direccionFinal = direcciones[direccionFinal];
+    this.edad = edad2;
+    this.direccionInicial = obtenerDireccion(direccionInicial);
+    this.direccionFinal = obtenerDireccion(direccionFinal);
     this.costo = Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal]);
   }
     ejecucion() {
