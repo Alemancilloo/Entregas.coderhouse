@@ -5,6 +5,7 @@ const cotizaciones = [];
 console.log(nombreProgramador);
 let usuario = prompt("Ingresa nombre y apellido");
 let edad;
+let edad2 = edad;
 console.log(usuario);
 
             // IDENTIFICACION DE USUARIO  //
@@ -22,10 +23,6 @@ else{
         alert("Naciste en " + nacimiento + ", eres menor de edad" + ". NO PUEDES INGRESAR >=(")
         window.location.href = "PREENTREGA2.html";
     }
-}
-let edad2 = edad;
-for(edad; edad >= 1; edad--){
-    console.log("Te saludo " + edad2 + " veces, por tus " + edad2 + " años");
 }
 
             // GENERACION DE SOLICITUD DE COTIZACION (DIRECCIONES) //
