@@ -87,22 +87,7 @@ if (verificarUsuario(usuario)){
     alert("Muy Bien......");
 }
 else {
-  experiencia()
-  function experiencia() {
-    let exp = parseInt(prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion"));
-    console.log("La calificacion del usuario fue:", exp);
-    nivelNps(exp);
-      function nivelNps(exp){
-      if(exp > 8)
-      console.log("Interaccion Excelente");
-      else if(exp >= 5)
-      console.log("Interaccion Regular");
-      else
-      console.log("Interaccion Pesima");
-    }
-  }
-}
-            // TRANSCRIPCION DE COTIZACION CLIENTE //
+             // TRANSCRIPCION DE COTIZACION CLIENTE //
 class cotizante{
   constructor(nombre, edad, direccionInicial, direccionFinal){
     this.nombre = nombre;
@@ -124,3 +109,18 @@ const costoTotal = sumaCotizaciones.reduce((numero, valor) => numero + valor, 0)
 console.log(cotizaciones);
 console.log("Total Costo de cotizaciones: " + costoTotal);
 
+  experiencia()
+  function experiencia() {
+    let exp = parseInt(prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion"));
+    console.log("La calificacion del usuario fue:", exp);
+    nivelNps(exp);
+      function nivelNps(exp){
+      if(exp > 8)
+      console.log("Interaccion Excelente");
+      else if(exp >= 5)
+      console.log("Interaccion Regular");
+      else
+      console.log("Interaccion Pesima");
+    }
+  }
+}
