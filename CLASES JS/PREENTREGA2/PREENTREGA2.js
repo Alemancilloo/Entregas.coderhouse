@@ -5,11 +5,11 @@ const cotizaciones = [];
 console.log(nombreProgramador);
 let usuario = prompt("Ingresa nombre y apellido");
 let edad;
-let edad2 = edad;
+let edad2;
 console.log(usuario);
 
             // IDENTIFICACION DE USUARIO  //
-function verificarUsuario(nombre){
+function verificarUsuario(usuario){
   if(usuario == nombreProgramador || usuario == nombreTutor){
   return true;
   }
