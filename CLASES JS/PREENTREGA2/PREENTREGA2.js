@@ -5,7 +5,7 @@ const cotizaciones = [];
 console.log(nombreProgramador);
 let usuario = prompt("Ingresa nombre y apellido");
 let edad;
-let edad2;
+
 console.log(usuario);
 
             // IDENTIFICACION DE USUARIO  //
@@ -30,7 +30,7 @@ else{
         alert("Naciste en " + nacimiento + ", eres menor de edad" + ". NO PUEDES INGRESAR >=(")
         window.location.href = "PREENTREGA2.html";
     }
-  edad2 = edad;
+
 }
 
 
@@ -74,7 +74,7 @@ else {
           // ALMACENAMIENTO DE COTIZACIONES REALIZADAS //
           cotizaciones.push({
             nombre: usuario,
-            edad: edad2,
+            edad: edad,
             direccionInicial: direccionCarga,
             direccionFinal: direccionDescarga,
             costo: Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal])
@@ -91,7 +91,7 @@ else {
 class cotizante{
   constructor(nombre, edad, direccionInicial, direccionFinal){
     this.nombre = nombre;
-    this.edad = edad2;
+    this.edad = edad;
     this.direccionInicial = obtenerDireccion(direccionInicial);
     this.direccionFinal = obtenerDireccion(direccionFinal);
     this.costo = Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal]);
@@ -101,7 +101,7 @@ class cotizante{
     }
 }
             // ULTIMA COTIZACION REALIZADA //
-const cotizacion1 = new cotizante(usuario, edad2, direccionInicial, direccionFinal);
+const cotizacion1 = new cotizante(usuario, edad, direccionInicial, direccionFinal);
 cotizacion1.ejecucion();
             // TOTAL DE COTIZACIONES REALIZADAS //
 const sumaCotizaciones = cotizaciones.map((x) => x.costo);
