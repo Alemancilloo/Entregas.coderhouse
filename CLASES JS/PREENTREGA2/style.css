@@ -7,14 +7,34 @@
 }
     /* Edicion de parte superior*/
 .redes  {
+    /* color de la letra*/
     color: white;
+    /* color fondo del escrito*/
     background-color: rgb(219, 115, 19);
-    width: 100vw;
-    font-size: 25px;
-    line-height: 2;
-    font-weight: 900;
-    
+    /* Tamaño de la Letra*/
+    font-size: 50px;
+    /* tamaño de la caja arriba y abajo */
+    line-height: 40px;
+    /* Cursiva letra*/
+    font-style: italic;
+    /* Espacio entre la caja y escrito (lado izquierdo)*/
+    padding-left: 50px;
+    /* Espacio entre la caja y escrito (lado Superior)*/
+    padding-top: 10px;
 }
-.linkinternos{
-    margin: 10px;
+.linkInternos{
+    /* Grosor de letra*/
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+    background-color: rgb(247, 163, 85);
+    padding-top: 10px;
+    height: 60px;
+    /* Curvatura de bordes abajo izquierdo y abajo derecho*/
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* Sombra de caja*/
+    box-shadow: 20px 25px 30px 10px #000;
+
 }
+
