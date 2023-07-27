@@ -2,9 +2,13 @@
     margin: 0px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.click:hover{
-    color: rgba(255, 0, 0, 0.736) !important;
-}
+.click{
+ font-size: large;
+:hover{
+    color: rgba(255, 98, 0, 0.912) !important;
+    /*Dentro de un hover esto hace que resalte el boton al pasar por encima*/
+    font-size: 20px;
+}}
     /* Edicion de parte superior*/
 .redes  {
     /* color de la letra*/
@@ -18,23 +22,68 @@
     /* Cursiva letra*/
     font-style: italic;
     /* Espacio entre la caja y escrito (lado izquierdo)*/
-    padding-left: 50px;
+    padding-left: 30px;
     /* Espacio entre la caja y escrito (lado Superior)*/
     padding-top: 10px;
+   
 }
 .linkInternos{
     /* Grosor de letra*/
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     color: black;
     background-color: rgb(247, 163, 85);
     padding-top: 10px;
-    height: 60px;
+    height: 50px;
     /* Curvatura de bordes abajo izquierdo y abajo derecho*/
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     /* Sombra de caja*/
     box-shadow: 20px 25px 30px 10px #000;
-
 }
+.caja1, .caja2, .caja3 {
+    /* Indicacion de colocacion de las 3 cajas en horizaontal*/
+    display: inline-block;
+    /* margen o distancia entre las cajas*/
+    margin: 5px;
+    margin-left: 20px;
+}
+.conjuntoCentral{
+    /*Ajustes de alineacion de contenido (centrado)*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* Ajuste separacion entre lineas*/
+    line-height: 30px;
+}
+.logoCentral{
+    position: relative;
+    top: 80px;
+    left: 35px;
+}
+.galeriaFotos{
+    position: relative;
+    top:-350px;
+    display:flex;
+    align-items: center;
+    /*UBICACION UNO ABAJO DEL OTRO*/
+    flex-direction: column;
+    text-align: center;
+    align-content:flex-end;
+    flex-wrap: wrap;
+}
+.piePagina{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: chocolate;
+    font-size:medium;
+    /* Creador de bordes*/
+    border: 5px ridge black;
+    box-shadow: 20px 25px 30px 10px #000;
+}
+
+    
 
