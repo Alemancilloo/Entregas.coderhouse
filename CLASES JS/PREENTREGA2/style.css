@@ -128,3 +128,29 @@
     50% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+.cotizaciones-realizadas {
+    background-color: #f5f5f5;
+    border: 1px solid #fd4f04;
+    padding: 10px;
+    display: none;
+}
+.cotizacion-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.cotizacion-item p {
+    margin: 0;
+}
+
+.cotizacion-item button {
+    background-color: darkorange;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
