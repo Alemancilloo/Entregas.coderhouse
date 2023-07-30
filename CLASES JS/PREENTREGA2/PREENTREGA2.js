@@ -1,126 +1,191 @@
-            // VARIABLES INICIALES Y CONSTANTES //
+// VARIABLES INICIALES Y CONSTANTES //
 const nombreProgramador = "Daniel Llobet";
 const nombreTutor = "Andres Pata"
 const cotizaciones = [];
-console.log(nombreProgramador);
-let usuario = prompt("Ingresa nombre y apellido");
-let edad;
+let usuario = "";
+let edad = 0;
+let totalCotizaciones = 0;
 
-console.log(usuario);
+// CONSTANTES EXTRAIDAS DEL DOM //
+const form = document.getElementById("cotizadorForm");
+const usernameInput = document.getElementById("username");
+const rutInput = document.getElementById("rut");
+const ageInput = document.getElementById("age");
+const emailInput = document.getElementById("email");
+const buttonClear = document.getElementById("buttonClear");
+//CREADOR DE DIV EN EL HTML//
+const cotizacionesRealizadasDiv = document.createElement("div");
+//UBICACION DEL DIV EN EL HTML//
+cotizacionesRealizadasDiv.classList.add("cotizaciones-realizadas");
 
-            // IDENTIFICACION DE USUARIO  //
-function verificarUsuario(usuario){
-  if(usuario == nombreProgramador || usuario == nombreTutor){
-  return true;
-  }
-  return false;
-}
-if (verificarUsuario(usuario)){
-    alert ("Bienvenido Programador Master");
-}
-else{
-    edad = parseInt(prompt("¿Cual es tu edad?"));
-    console.log(edad);
-    let nacimiento = ( 2023 - edad);
-    console.log(nacimiento);
-    if(edad >= 18){
-        alert("Naciste en " + nacimiento + ", eres mayor de edad" + ". PUEDES INGRESAR =)")
-    }       
-    else{
-        alert("Naciste en " + nacimiento + ", eres menor de edad" + ". NO PUEDES INGRESAR >=(")
-        window.location.href = "PREENTREGA2.html";
+
+// IDENTIFICACION DE USUARIO  //
+function verificarUsuario(usuario) {
+    if (usuario == nombreProgramador || usuario == nombreTutor) {
+        return true;
     }
-
+    return false;
 }
+if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesRealizadasDiv && buttonClear) {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        usuario = usernameInput.value.trim();
+        //rut = rutInput.value.trim();
+        edad = parseInt(ageInput.value);
+        //email = emailInput.value.trim();
 
-
-            // GENERACION DE SOLICITUD DE COTIZACION (DIRECCIONES) //
-let direccionInicial;
-let direccionFinal;
-let salir = " ";
-function obtenerDireccion(direccion){
-const direcciones = {
-  1: "SANTIAGO-CENTRO",
-  2: "PUENTE ALTO",
-  3: "VITACURA"
-};
-return direcciones[direccion] || "Direccion Invalida";
-}
-const valorDireccion = {
-  1: 10890.60,
-  2: 25400.85,
-  3: 15320.24
-}
-
-if (verificarUsuario(usuario)){
-    alert("Que Todo Te Salga......");
-}
-else {
-    alert("BIENVENIDO A FLETES EL PANA SPA")
-    while (salir !== 0) {
-      direccionInicial = parseInt(prompt("Elige el número de opción para tu dirección de CARGA: \n1. SANTIAGO-CENTRO \n2. PUENTE ALTO \n3. VITACURA"));
-      direccionFinal = parseInt(prompt("Elige el número de opción para tu dirección de DESCARGA: \n1. SANTIAGO-CENTRO \n2. PUENTE ALTO \n3. VITACURA"));
-      const direccionCarga = obtenerDireccion(direccionInicial);
-      const direccionDescarga = obtenerDireccion(direccionFinal);
-      if (direccionCarga === "Direccion Invalida" || direccionDescarga === "Direccion Invalida"){
-      alert("Número de opción de dirección inválido");
-    } 
-    else {
-      alert("Tu cotización es desde " + direccionCarga + " hasta " + direccionDescarga);
-    }
-        if (salir !== 0) {
-          salir = parseInt(prompt("Elige: \n0. SALIR \n1. VOLVER A COTIZAR"));
+        if (verificarUsuario(usuario)) {
+            mostrarMensaje("Bienvenido Programador Master");
+            // Accion para mostrar cuadro de cotizacion realizada//
+            cotizacionesRealizadasDiv.style.display = "block";
+        } else {
+            if (edad >= 18) {
+                mostrarMensaje("Gracias por cotizar con Fletes El Pana");
+                cotizacionesRealizadasDiv.style.display = "block";
+            } else {
+                alert("Eres Menor de Edad, no puedes cotizar");
+                window.location.href = "index.html";
+            }
         }
-          // ALMACENAMIENTO DE COTIZACIONES REALIZADAS //
-          cotizaciones.push({
-            nombre: usuario,
-            edad: edad,
-            direccionInicial: direccionCarga,
-            direccionFinal: direccionDescarga,
-            costo: Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal])
-        });
-      }
+        //CREACION DE CONSTANTES Y VARIABLES PARA SOLICITUD DE COTIZACION//
+        const direccionCarga = document.getElementById("loading").value;
+        const direccionDescarga = document.getElementById("download").value;
+        let costoCarga = 0;
+        let costoDescarga = 0;
+        let costoTotal = 0;
+
+        switch (direccionCarga) {
+            case "1":
+                costoCarga = 10253.20;
+                break;
+            case "2":
+                costoCarga = 12754.13;
+                break;
+            case "3":
+                costoCarga = 13278.18;
+                break;
+            case "4":
+                costoCarga = 11236.99;
+                break;
+            case "5":
+                costoCarga = 15278.52;
+                break;
+            case "6":
+                costoCarga = 8542.17;
+                break;
+            case "7":
+                costoCarga = 10587.25;
+                break;
+            case "8":
+                costoCarga = 14048.52;
+                break;
+            default:
+                costoCarga = 0;
+                break;
+        }
+        switch (direccionDescarga) {
+            case "1":
+                costoDescarga = 10253.20;
+                break;
+            case "2":
+                costoDescarga = 12754.13;
+                break;
+            case "3":
+                costoDescarga = 13278.18;
+                break;
+            case "4":
+                costoDescarga = 11236.99;
+                break;
+            case "5":
+                costoDescarga = 15278.52;
+                break;
+            case "6":
+                costoDescarga = 8542.17;
+                break;
+            case "7":
+                costoDescarga = 10587.25;
+                break;
+            case "8":
+                costoDescarga = 14048.52;
+                break;
+            default:
+                costoDescarga = 0;
+                break;
+        }
+
+        costoTotal = costoCarga + costoDescarga;
+
+        const cotizacion = {
+            direccionInicial: document.getElementById("loading").selectedOptions[0].text,
+            direccionFinal: document.getElementById("download").selectedOptions[0].text,
+            costo: costoTotal.toFixed(2)
+        };
+
+        cotizaciones.push(cotizacion);
+
+        // CAlCULO DE SUMATORIA TOTAL DE COTIZACIONES//
+        totalCotizaciones += parseFloat(cotizacion.costo);
+
+        if (cotizaciones.length > 0) {
+            let cotizacionesHTML = `<div class="contenedor2">`;
+            cotizacionesHTML += `<h3><center> COTIZACIÓN </center></h3>`;
+            cotizacionesHTML += `<h3>A nombre de: ${usuario}</h3>`;
+
+            cotizaciones.forEach((cotizacion, index) => {
+                cotizacionesHTML += `<div class="cotizacion-item">`;
+                cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
+                          Lugar de Carga: ${cotizacion.direccionInicial}<br> 
+                          Lugar de Descarga: ${cotizacion.direccionFinal}<br>
+                          Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                cotizacionesHTML += `</div>`;
+            });
+            cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
+            form.parentElement.appendChild(cotizacionesRealizadasDiv);
+        }
+
+    });
+    buttonClear.addEventListener("click", () => {
+        // Limpiar cotizaciones realizadas
+        cotizaciones.length = 0;
+        totalCotizaciones = 0;
+        cotizacionesRealizadasDiv.innerHTML = "";
+        cotizacionesRealizadasDiv.style.display = "none";
+    });
 }
 
-            //  EVALUACION DE SATISFACCION USUARIO (NPS) //
-if (verificarUsuario(usuario)){
-    alert("Muy Bien......");
-}
-else {
-             // TRANSCRIPCION DE COTIZACION CLIENTE //
-class cotizante{
-  constructor(nombre, edad, direccionInicial, direccionFinal){
-    this.nombre = nombre;
-    this.edad = edad;
-    this.direccionInicial = obtenerDireccion(direccionInicial);
-    this.direccionFinal = obtenerDireccion(direccionFinal);
-    this.costo = Math.ceil(valorDireccion[direccionInicial]) + Math.ceil(valorDireccion[direccionFinal]);
-  }
-    ejecucion() {
-        console.log(this.nombre + " tu ultima cotizacion fue: desde " + this.direccionInicial + " hasta " + this.direccionFinal + " con un costo de: " + this.costo);
+function borrarCotizacion(index) {
+    if (index >= 0 && index < cotizaciones.length) {
+        const cotizacionBorrada = cotizaciones.splice(index, 1)[0];
+        totalCotizaciones -= parseFloat(cotizacionBorrada.costo);
+        // Mostrar cotizaciones actualizadas en el DOM
+        if (cotizaciones.length > 0) {
+            let cotizacionesHTML = `<div class="contenedor2">`;
+            cotizacionesHTML += `<h3>Cotizaciones Realizadas de ${usuario}:</h3>`;
+            cotizaciones.forEach((cotizacion, index) => {
+                cotizacionesHTML += `<div class="cotizacion-item">`;
+                cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
+                                      Lugar de Carga: ${cotizacion.direccionInicial}<br> 
+                                      Lugar de Descarga: ${cotizacion.direccionFinal}<br>
+                                      Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                cotizacionesHTML += `</div>`;
+            });
+            cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
+            form.parentElement.appendChild(cotizacionesRealizadasDiv);
+        } else {
+            cotizacionesRealizadasDiv.innerHTML = "";
+            cotizacionesRealizadasDiv.style.display = "none";
+        }
     }
 }
-            // ULTIMA COTIZACION REALIZADA //
-const cotizacion1 = new cotizante(usuario, edad, direccionInicial, direccionFinal);
-cotizacion1.ejecucion();
-            // TOTAL DE COTIZACIONES REALIZADAS //
-const sumaCotizaciones = cotizaciones.map((x) => x.costo);
-const costoTotal = sumaCotizaciones.reduce((numero, valor) => numero + valor, 0);
-console.log(cotizaciones);
-console.log("Total Costo de cotizaciones: " + costoTotal);
 
-  experiencia()
-  function experiencia() {
-    let exp = parseInt(prompt("califica del 1 al 10 tu experiencia, donde 10 es la mayor calificacion"));
-    console.log("La calificacion del usuario fue:", exp);
-    nivelNps(exp);
-      function nivelNps(exp){
-      if(exp > 8)
-      console.log("Interaccion Excelente");
-      else if(exp >= 5)
-      console.log("Interaccion Regular");
-      else
-      console.log("Interaccion Pesima");
-    }
-  }
+function mostrarMensaje(mensaje) {
+  const mensajeDiv = document.createElement("div");
+  mensajeDiv.classList.add("mensaje");
+  mensajeDiv.innerText = mensaje;
+  document.body.appendChild(mensajeDiv);
+  mensajeDiv.style.display = "block"; // Mostrar el mensaje
+
+  setTimeout(() => {
+      mensajeDiv.style.display = "none"; // Ocultar el mensaje después de 5 segundos
+  }, 5000);
 }

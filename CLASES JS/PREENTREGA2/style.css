@@ -1,79 +1,99 @@
 * {
-    margin: 0px;
+    margin: 0;
+    padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.click{
- font-size: large;
-:hover{
-    color: rgba(255, 98, 0, 0.912) !important;
-    /*Dentro de un hover esto hace que resalte el boton al pasar por encima*/
-    font-size: 20px;
-}}
-    /* Edicion de parte superior*/
-.redes  {
-    /* color de la letra*/
+
+.redes {
     color: white;
-    /* color fondo del escrito*/
     background-color: rgb(219, 115, 19);
-    /* Tamaño de la Letra*/
     font-size: 50px;
-    /* tamaño de la caja arriba y abajo */
     line-height: 40px;
-    /* Cursiva letra*/
     font-style: italic;
-    /* Espacio entre la caja y escrito (lado izquierdo)*/
     padding-left: 30px;
-    /* Espacio entre la caja y escrito (lado Superior)*/
     padding-top: 10px;
-   
 }
-.linkInternos{
-    /* Grosor de letra*/
+
+.linkInternos {
     font-weight: 600;
     font-size: 20px;
     color: black;
     background-color: rgb(247, 163, 85);
     padding-top: 10px;
     height: 50px;
-    /* Curvatura de bordes abajo izquierdo y abajo derecho*/
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-    /* Sombra de caja*/
     box-shadow: 20px 25px 30px 10px #000;
 }
-.caja1, .caja2, .caja3 {
-    /* Indicacion de colocacion de las 3 cajas en horizaontal*/
+
+.caja1,
+.caja2,
+.caja3 {
     display: inline-block;
-    /* margen o distancia entre las cajas*/
     margin: 5px;
     margin-left: 20px;
 }
-.conjuntoCentral{
-    /*Ajustes de alineacion de contenido (centrado)*/
+
+.contenedor1 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* Ajuste separacion entre lineas*/
     line-height: 30px;
+    margin-bottom: 30px;
 }
-.logoCentral{
+
+.logoCentral {
     position: relative;
     top: 80px;
     left: 35px;
 }
-.galeriaFotos{
-    position: relative;
-    top:-350px;
-    display:flex;
-    align-items: center;
-    /*UBICACION UNO ABAJO DEL OTRO*/
-    flex-direction: column;
-    text-align: center;
-    align-content:flex-end;
-    flex-wrap: wrap;
+
+.contenedor2 {
+    margin: 10px;
 }
-.piePagina{
+
+.cotizador {
+    border: 5px solid darkorange;
+    padding: 20px;
+    border-radius: 10%;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.miniCuadro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-cotizador {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.click {
+    font-size: larger;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.buttonClear {
+    margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.piePagina {
     position: relative;
     margin-top: 100px;
     top: -10px;
@@ -81,38 +101,30 @@
     align-items: center;
     flex-direction: column;
     background-color: chocolate;
-    font-size:medium;
-    /* Creador de bordes*/
+    font-size: medium;
     border: 5px ridge black;
     box-shadow: 20px 25px 30px 10px #000;
+    z-index: 1;
 }
-.cotizador{
-    font-size: 20px;
-    border: 5px solid black;
-    width: max-content;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    position: relative;
-    top: 50%;
+.mensaje {
+    position: fixed;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Ajuste para subir o bajar cuadro*/
-    margin-top: 300px;
-    /*Curvatura de borde*/
-    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid darkorange;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkorange;
+    background-image: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradiente de colores */
+    z-index: 2; /* Asegurarse de que el mensaje tenga un valor de z-index mayor */
+    display: none; /* Inicialmente oculto */
+    animation: fadeInOut 6s ease-in-out; /* Nombre de la animación, duración, función de tiempo */
 }
-.botonCarga, .botonDescarga {
-    font-size: large;
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
-
-    
-

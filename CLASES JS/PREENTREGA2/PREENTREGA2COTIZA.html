@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +8,71 @@
     <link rel="icon" href="icono.ico">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h3 class="redes">Siguenos en nuestras redes sociales</h3>
-            <nav>
-                <ul class="linkInternos">
-                    <li class="caja1"><a href="index.html">Inicio</a></li>
-                    <li class="caja2"><a href="PREENTREGA2CUENTA.html">Cuenta</a></li>
-                    <li class="caja3"><a href="PREENTREGA2COMUNIDAD.html">Comunidad</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <ul class="linkInternos">
+                <li class="caja1"><a href="index.html">Inicio</a></li>
+                <li class="caja2"><a href="PREENTREGA2CUENTA.html">Cuenta</a></li>
+                <li class="caja3"><a href="PREENTREGA2COMUNIDAD.html">Comunidad</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="conjuntoCentral">
-        <div class="logoCentral"><img src="./icono.png" height="300px" alt="Imagen" title="Fletes El Pana" ></div>
+    <div class="contenedor1">
+        <div class="logoCentral"><img src="./icono.png" height="300px" alt="Imagen" title="Fletes El Pana"></div>
         <h1>Fletes El Pana</h1>
         <h2>Contigo Siempre</h2>
     </div>
-    <div>
-        <form class="cotizador">
-            <h3><Center>COTIZACIÓN</Center></h3><br>
-            <label for="username">Nombre y Apellido:</label>
-                <input type="text" id="username" name="username"><br>
-            <label for="age">Edad:</label>
-                <input type="number" id="age" name="age"><br>
-            <h3>DIRECCIONES:</h3><br>
-                <label for="loading">Carga:</label>
-                <select class="botonCarga" name="carga" id="loading">
-                  <option value="santiago">Santiago</option>
-                  <option value="vitacura">Vitacura</option>
-                  <option value="renca">Renca</option>
-                  <option value="huechuraba">Huechuraba</option>
-                  <option value="lasCondes">Las Condes</option>
-                  <option value="sanMiguel">San Miguel</option>
-                  <option value="ñuñoa">Ñuñoa</option>
-                  <option value="macul">Macul</option>
-                </select><br>   
-                <label for="download">Descarga:</label>
-                <select class="botonDescarga" name="download" id="download">
-                  <option value="santiago">Santiago</option>
-                  <option value="vitacura">Vitacura</option>
-                  <option value="renca">Renca</option>
-                  <option value="huechuraba">Huechuraba</option>
-                  <option value="lasCondes">Las Condes</option>
-                  <option value="sanMiguel">San Miguel</option>
-                  <option value="ñuñoa">Ñuñoa</option>
-                  <option value="macul">Macul</option>
-                </select><br>
-                <input class="click" type="submit" value="Enviar" />
-          </form>
+    <div class="contenedor2">
+        <form class="cotizador" id="cotizadorForm">
+            <h3><center>COTIZACIÓN</center></h3><br>
+            <div class="miniCuadro">
+                <label for="username">Nombre y Apellido: </label>
+                <input type="text" id="username" name="username" class="input-cotizador">
+            </div> <br>
+            <label for="rut">Rut: <input type="number" id="rut" name="rut">
+                <label for="age">Edad:<input type="text" id="age" name="age" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="2"></label>
+            </label><br>
+            <div class="miniCuadro">
+                <label for="email">Correo Electrónico: </label>
+                <input class="input-cotizador" type="email" id="email" name="email">
+            </div><br>
+            <h3><center>DIRECCIONES:</center></h3><br>
+            <label style="font-weight: 900;" for="loading">Lugar de Carga:</label><br>
+            <select style="font-size: 20px;" class="botonCarga" name="carga" id="loading">
+                <option value="1">Santiago</option>
+                <option value="2">Vitacura</option>
+                <option value="3">Renca</option>
+                <option value="4">Huechuraba</option>
+                <option value="5">Las Condes</option>
+                <option value="6">San Miguel</option>
+                <option value="7">Ñuñoa</option>
+                <option value="8">Macul</option>
+            </select><br>
+            <label style="font-weight: 900;" for="download">Lugar de Descarga:</label><br>
+            <select style="font-size: 20px;" class="botonDescarga" name="download" id="download">
+                <option value="1">Santiago</option>
+                <option value="2">Vitacura</option>
+                <option value="3">Renca</option>
+                <option value="4">Huechuraba</option>
+                <option value="5">Las Condes</option>
+                <option value="6">San Miguel</option>
+                <option value="7">Ñuñoa</option>
+                <option value="8">Macul</option>
+            </select><br>
+            <input class="click" type="submit" value="Cotizar" />
+        </form>
+        <div class="cotizaciones-realizadas" id="cotizaciones-realizadas">
+            <button class="buttonClear" id="buttonClear">Borrar Todo</button>
+        </div>
     </div>
     <footer class="piePagina">
         <h5>Copyrigth © 2023 Fletes El Pana RUT: 76.998.756-8</h5>
         <h5>Numero de contacto: +56971417589 / +56926152464</h5>
     </footer>
-    <!--<script src="./PREENTREGA2.js"></script>-->
+    <script src="PREENTREGA2.js"></script>
 </body>
+
 </html>
