@@ -34,6 +34,18 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         edad = parseInt(ageInput.value);
         //email = emailInput.value.trim();
 
+        //Guardado Storage
+        saveLocalStorage();
+        function saveLocalStorage(){
+            user = {
+            nombre: usuario,
+            edad: edad
+        }
+    }
+    localStorage.setItem("Usuario", user.nombre);
+    localStorage.setItem("Edad", user.edad);
+        
+
         if (verificarUsuario(usuario)) {
             mostrarMensaje("Bienvenido Programador Master");
             // Accion para mostrar cuadro de cotizacion realizada//
@@ -134,9 +146,9 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
             cotizaciones.forEach((cotizacion, index) => {
                 cotizacionesHTML += `<div class="cotizacion-item">`;
                 cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
-                          Lugar de Carga: ${cotizacion.direccionInicial}<br> 
-                          Lugar de Descarga: ${cotizacion.direccionFinal}<br>
-                          Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                                    Lugar de Carga: ${cotizacion.direccionInicial}<br> 
+                                    Lugar de Descarga: ${cotizacion.direccionFinal}<br>
+                                    Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
                 cotizacionesHTML += `</div>`;
             });
             cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
@@ -160,15 +172,15 @@ function borrarCotizacion(index) {
         // Mostrar cotizaciones actualizadas en el DOM
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
-            cotizacionesHTML += `<h3>Cotizaciones Realizadas de ${usuario}:</h3>`;
-            cotizaciones.forEach((cotizacion, index) => {
-                cotizacionesHTML += `<div class="cotizacion-item">`;
-                cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
-                                      Lugar de Carga: ${cotizacion.direccionInicial}<br> 
-                                      Lugar de Descarga: ${cotizacion.direccionFinal}<br>
-                                      Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
-                cotizacionesHTML += `</div>`;
-            });
+                cotizacionesHTML += `<h3>Cotizaciones Realizadas de ${usuario}:</h3>`;
+                cotizaciones.forEach((cotizacion, index) => {
+                    cotizacionesHTML += `<div class="cotizacion-item">`;
+                    cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
+                                        Lugar de Carga: ${cotizacion.direccionInicial}<br> 
+                                        Lugar de Descarga: ${cotizacion.direccionFinal}<br>
+                                        Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                    cotizacionesHTML += `</div>`;
+                });
             cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
             form.parentElement.appendChild(cotizacionesRealizadasDiv);
         } else {
@@ -179,13 +191,14 @@ function borrarCotizacion(index) {
 }
 
 function mostrarMensaje(mensaje) {
-  const mensajeDiv = document.createElement("div");
-  mensajeDiv.classList.add("mensaje");
-  mensajeDiv.innerText = mensaje;
-  document.body.appendChild(mensajeDiv);
-  mensajeDiv.style.display = "block"; // Mostrar el mensaje
+    const mensajeDiv = document.createElement("div");
+    mensajeDiv.classList.add("mensaje");
+    mensajeDiv.innerText = mensaje;
+    document.body.appendChild(mensajeDiv);
+    mensajeDiv.style.display = "block"; // Mostrar el mensaje
 
-  setTimeout(() => {
+    setTimeout(() => {
       mensajeDiv.style.display = "none"; // Ocultar el mensaje después de 5 segundos
-  }, 5000);
+    }, 5000);
 }
+
