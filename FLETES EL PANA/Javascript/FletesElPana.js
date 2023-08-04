@@ -150,7 +150,9 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
             cotizacionesHTML += `<h3><center> COTIZACIÓN </center></h3>`;
-            cotizacionesHTML += `<h3>A nombre de: ${usuario}</h3>`;
+            cotizacionesHTML += `<h3>Nombre y Apellido: ${usuario}</h3>`;
+            cotizacionesHTML += `<h3>Rut: ${rut}</h3>`;
+            cotizacionesHTML += `<h3>Email: ${email}</h3>`;
 
             cotizaciones.forEach((cotizacion, index) => {
                 cotizacionesHTML += `<div class="cotizacion-item">`;
@@ -190,7 +192,9 @@ function borrarCotizacion(index) {
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
             cotizacionesHTML += `<h3><center> COTIZACIÓN </center></h3>`;
-            cotizacionesHTML += `<h3>A nombre de: ${usuario}</h3>`;
+            cotizacionesHTML += `<h3>Nombre y Apellido: ${usuario}</h3>`;
+            cotizacionesHTML += `<h3>Rut: ${rut}</h3>`;
+            cotizacionesHTML += `<h3>Email: ${email}</h3>`;
 
             cotizaciones.forEach((cotizacion, index) => {
                 cotizacionesHTML += `<div class="cotizacion-item">`;
