@@ -13,8 +13,10 @@ const rutInput = document.getElementById("rut");
 const ageInput = document.getElementById("age");
 const emailInput = document.getElementById("email");
 const buttonClear = document.getElementById("buttonClear");
+
 //CREADOR DE DIV EN EL HTML//
 const cotizacionesRealizadasDiv = document.createElement("div");
+
 //UBICACION DEL DIV EN EL HTML//
 cotizacionesRealizadasDiv.classList.add("cotizaciones-realizadas");
 
@@ -26,7 +28,9 @@ function verificarUsuario(usuario) {
     }
     return false;
 }
+// FUNCIONAMIENTO INTEGRADO DEL COTIZADOR  //
 if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesRealizadasDiv && buttonClear) {
+    // FUNCION DEL BOTON COTIZAR  //
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         usuario = usernameInput.value.trim();
@@ -34,7 +38,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         edad = parseInt(ageInput.value);
         //email = emailInput.value.trim();
 
-        //Guardado Storage
+        //  FUNCION GUARDADO LOCAL-STORAGE  //
         saveLocalStorage();
         function saveLocalStorage(){
             user = {
@@ -42,13 +46,14 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
             edad: edad
         }
     }
+
+    //  EJECUCION DEL GUARDADO LOCAL-STORAGE
     localStorage.setItem("Usuario", user.nombre);
     localStorage.setItem("Edad", user.edad);
         
-
+        // EJECUCION DE MENSAJE AL COTIZAR //
         if (verificarUsuario(usuario)) {
             mostrarMensaje("Bienvenido Programador Master");
-            // Accion para mostrar cuadro de cotizacion realizada//
             cotizacionesRealizadasDiv.style.display = "block";
         } else {
             if (edad >= 18) {
@@ -59,7 +64,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
                 window.location.href = "index.html";
             }
         }
-        //CREACION DE CONSTANTES Y VARIABLES PARA SOLICITUD DE COTIZACION//
+        //  CREACION DE CONSTANTES Y VARIABLES PARA SOLICITUD DE COTIZACION  //
         const direccionCarga = document.getElementById("loading").value;
         const direccionDescarga = document.getElementById("download").value;
         let costoCarga = 0;
@@ -135,9 +140,9 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
 
         cotizaciones.push(cotizacion);
 
-        // CAlCULO DE SUMATORIA TOTAL DE COTIZACIONES//
+        // CAlCULO DE SUMATORIA TOTAL DE COTIZACIONES  //
         totalCotizaciones += parseFloat(cotizacion.costo);
-
+        // MOSTRAR DE COTIZACION EN EL DOM //
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
             cotizacionesHTML += `<h3><center> COTIZACIÓN </center></h3>`;
@@ -156,20 +161,20 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         }
 
     });
+    //  FUNCION PARA BORRAR TODAS LAS COTIZACIONES  //
     buttonClear.addEventListener("click", () => {
-        // Limpiar cotizaciones realizadas
         cotizaciones.length = 0;
         totalCotizaciones = 0;
         cotizacionesRealizadasDiv.innerHTML = "";
         cotizacionesRealizadasDiv.style.display = "none";
     });
 }
-
+//  FUNCION PARA BORRAR CADA UNA DE LAS COTIZACIONES REALIZADAS//
 function borrarCotizacion(index) {
     if (index >= 0 && index < cotizaciones.length) {
         const cotizacionBorrada = cotizaciones.splice(index, 1)[0];
         totalCotizaciones -= parseFloat(cotizacionBorrada.costo);
-        // Mostrar cotizaciones actualizadas en el DOM
+        // BORRAR COTIZACIONES EN EL DOM //
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
                 cotizacionesHTML += `<h3>Cotizaciones Realizadas de ${usuario}:</h3>`;
@@ -189,17 +194,20 @@ function borrarCotizacion(index) {
         }
     }
 }
-
+// FUNCION DE MENSAJE AL COTIZAR  //
 function mostrarMensaje(mensaje) {
     const mensajeDiv = document.createElement("div");
     mensajeDiv.classList.add("mensaje");
     mensajeDiv.innerText = mensaje;
     document.body.appendChild(mensajeDiv);
-    mensajeDiv.style.display = "block"; // Mostrar el mensaje
-
+    // MOSTRAE EL MENSAJE //
+    mensajeDiv.style.display = "block";
+    // OCULTAR MENSAJE DESPUES DE 5 SEGUNDOS //
     setTimeout(() => {
-      mensajeDiv.style.display = "none"; // Ocultar el mensaje después de 5 segundos
-    }, 5000);
+        mensajeDiv.style.display = "none";
+        }, 
+        5000
+    );
 }
 
 
