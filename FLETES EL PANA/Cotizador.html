@@ -32,7 +32,7 @@
                 <label for="username">Nombre y Apellido: </label>
                 <input type="text" id="username" name="username" class="input-cotizador">
             </div> <br>
-            <label for="rut">Rut: <input type="number" id="rut" name="rut">
+            <label for="rut">Rut:<input type="text" id="rut" name="rut" pattern="[0-9]+[-]?[0-9kK]{1}" oninput="formatRut(this)" maxlength="12">
                 <label for="age">Edad:<input type="text" id="age" name="age" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="2"></label>
             </label><br>
             <div class="miniCuadro">
@@ -65,7 +65,7 @@
             <input class="click" type="submit" value="Cotizar" />
         </form>
         <div class="cotizaciones-realizadas" id="cotizaciones-realizadas">
-            
+
         </div>
     </div>
     <div>
