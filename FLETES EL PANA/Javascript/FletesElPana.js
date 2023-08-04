@@ -134,18 +134,18 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
                 break;
         }
 
-        costoTotal = costoCarga + costoDescarga;
+        costoTotal = Math.round(costoCarga + costoDescarga);
 
         const cotizacion = {
             direccionInicial: document.getElementById("loading").selectedOptions[0].text,
             direccionFinal: document.getElementById("download").selectedOptions[0].text,
-            costo: costoTotal.toFixed(2)
+            costo: costoTotal.toLocaleString()
         };
 
         cotizaciones.push(cotizacion);
 
         // CAlCULO DE SUMATORIA TOTAL DE COTIZACIONES  //
-        totalCotizaciones += parseFloat(cotizacion.costo);
+        totalCotizaciones += parseFloat(cotizacion.costo.replace('.', '').replace(',', '.'));
         // MOSTRAR DE COTIZACION EN EL DOM //
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
@@ -164,7 +164,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
             });
             
             // EJECUCION DE EL TOTAL DE COTIZACIONES //
-            cotizacionesHTML += `<p><b>Total Cotizaciones: ${totalCotizaciones.toFixed(2)}</b></p>`;
+            cotizacionesHTML += `<p><b>Total Cotizaciones: ${totalCotizaciones.toLocaleString()}</b></p>`;
 
             cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
             form.parentElement.appendChild(cotizacionesRealizadasDiv);
@@ -186,8 +186,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
 function borrarCotizacion(index) {
     if (index >= 0 && index < cotizaciones.length) {
         const cotizacionBorrada = cotizaciones.splice(index, 1)[0];
-        totalCotizaciones -= parseFloat(cotizacionBorrada.costo);
-        
+        totalCotizaciones -= parseFloat(cotizacionBorrada.costo.replace('.', '').replace(',', '.'));
         // VOLVER A MOSTRAR TOTAL COTIZACIONES AL BORRAR  //
         if (cotizaciones.length > 0) {
             let cotizacionesHTML = `<div class="contenedor2">`;
@@ -206,7 +205,7 @@ function borrarCotizacion(index) {
             });
             
             // EJECUCION DE EL TOTAL DE COTIZACIONES //
-            cotizacionesHTML += `<p><b>Total Cotizaciones: ${totalCotizaciones.toFixed(2)}</b></p>`;
+            cotizacionesHTML += `<p><b>Total Cotizaciones: ${totalCotizaciones.toLocaleString()}</b></p>`;
 
             cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
             form.parentElement.appendChild(cotizacionesRealizadasDiv);
@@ -233,23 +232,25 @@ function mostrarMensaje(mensaje) {
     );
 }
 
+// DESARROLLO DEL CAMPO RUT //
+const rutInput2 = document.getElementById('rut');
 function formatRut(input) {
-  // Eliminar todos los caracteres que no sean números, excepto el guión.
-  input.value = input.value.replace(/[^0-9\-]/g, '');
-  
-  // Dividir el RUT en parte entera y dígito verificador (si lo tiene).
-  const parts = input.value.split('-');
-  let formattedRut = parts[0];
-
-  // Agregar el separador de miles.
-  formattedRut = formattedRut.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-
-  // Reunir las partes con el guión.
-  if (parts.length > 1) {
-    formattedRut += '-' + parts[1];
-  }
-
-  // Actualizar el valor del input con el RUT formateado.
-  input.value = formattedRut;
+    // ELIMINAR CARACTERES QUE NO SON NUMEROS EXCEPTO - Y "K"  //
+    input.value = input.value.replace(/[^0-9kK-]/g, '');
+    // DIVIDIR RUT EN PARTE ENTERA Y DIGITO VERIFICADOR (SI LO TIENE)  //
+    const parts = input.value.split('-');
+    let formattedRut = parts[0];
+    // SEPARADOR DE MILES  //
+    formattedRut = formattedRut.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    // REUNIR LAS PARTES CON GUION
+    if (parts.length > 1) {
+        formattedRut += '-' + parts[1];
+    }
+    // ACTUALIZAR EL INPUT CON RUT FORMATEADO  //
+    input.value = formattedRut;
 }
+// ESCUCHAR EL INPUT RUT MIENTRAS SE ESCRIBE  //
+rutInput2.addEventListener('input', function() {
+    formatRut(rutInput2);
+});
 

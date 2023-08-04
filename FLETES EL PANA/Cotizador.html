@@ -30,14 +30,14 @@
             <h3><center>COTIZACIÓN</center></h3><br>
             <div class="miniCuadro">
                 <label for="username">Nombre y Apellido: </label>
-                <input type="text" id="username" name="username" class="input-cotizador">
+                <input type="text" id="username" name="username" class="input-cotizador" required>
             </div> <br>
-            <label for="rut">Rut:<input type="text" id="rut" name="rut" pattern="[0-9]+[-]?[0-9kK]{1}" oninput="formatRut(this)" maxlength="12">
+            <label for="rut">Rut:<input type="text" id="rut" name="rut" maxlength="12" required>
                 <label for="age">Edad:<input type="text" id="age" name="age" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="2"></label>
             </label><br>
             <div class="miniCuadro">
                 <label for="email">Correo Electrónico: </label>
-                <input class="input-cotizador" type="email" id="email" name="email">
+                <input class="input-cotizador" type="email" id="email" name="email" required>
             </div><br>
             <h3><center>DIRECCIONES:</center></h3><br>
             <label style="font-weight: 900;" for="loading">Lugar de Carga:</label><br>
