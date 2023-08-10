@@ -253,4 +253,3 @@ function formatRut(input) {
 rutInput2.addEventListener('input', function() {
     formatRut(rutInput2);
 });
-
