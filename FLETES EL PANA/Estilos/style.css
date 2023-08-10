@@ -175,3 +175,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.carrito {
+    position: absolute;
+    display: block;
+    left: 90%;
+    top: 1%;
+}
