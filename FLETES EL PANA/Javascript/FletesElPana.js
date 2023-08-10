@@ -159,12 +159,12 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
                 cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
                                     Lugar de Carga: ${cotizacion.direccionInicial}<br> 
                                     Lugar de Descarga: ${cotizacion.direccionFinal}<br>
-                                    Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                                    Costo: $ ${cotizacion.costo} pesos<button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
                 cotizacionesHTML += `</div>`;
             });
             
             // EJECUCION DE EL TOTAL DE COTIZACIONES //
-            cotizacionesHTML += `<p><b>Total Cotizaciones: ${totalCotizaciones.toLocaleString()}</b></p>`;
+            cotizacionesHTML += `<p><b>Total Cotizaciones: $ ${totalCotizaciones.toLocaleString()} pesos</b></p>`;
 
             cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
             form.parentElement.appendChild(cotizacionesRealizadasDiv);
@@ -200,12 +200,12 @@ function borrarCotizacion(index) {
                 cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
                                     Lugar de Carga: ${cotizacion.direccionInicial}<br> 
                                     Lugar de Descarga: ${cotizacion.direccionFinal}<br>
-                                    Costo: ${cotizacion.costo} <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                                    Costo: $ ${cotizacion.costo} pesos<button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
                 cotizacionesHTML += `</div>`;
             });
             
             // EJECUCION DE EL TOTAL DE COTIZACIONES //
-            cotizacionesHTML += `<p><b>Total Cotizaciones: ${totalCotizaciones.toLocaleString()}</b></p>`;
+            cotizacionesHTML += `<p><b>Total Cotizaciones: $ ${totalCotizaciones.toLocaleString()} pesos</b></p>`;
 
             cotizacionesRealizadasDiv.innerHTML = cotizacionesHTML;
             form.parentElement.appendChild(cotizacionesRealizadasDiv);
