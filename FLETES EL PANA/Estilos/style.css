@@ -183,3 +183,21 @@
     left: 90%;
     top: 1%;
 }
+
+#contadorCarrito {
+    display: inline-block;
+    background-color: #f29c65;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    left: 65px;
+    top: -6px;
+    border: 3px solid black;
+}

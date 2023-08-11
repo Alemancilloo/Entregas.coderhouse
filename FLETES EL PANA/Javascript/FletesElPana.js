@@ -73,12 +73,8 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
             email: email
         }
     }
-
     //  EJECUCION DEL GUARDADO LOCAL-STORAGE
-    localStorage.setItem("Usuario", user.nombre);
-    localStorage.setItem("Edad", user.edad);
-    localStorage.setItem("Rut", user.rut);
-    localStorage.setItem("Email", user.email);
+    localStorage.setItem("Datos", JSON.stringify(user));
         
         // EJECUCION DE MENSAJE AL COTIZAR //
         if (verificarUsuario(usuario)) {
@@ -239,20 +235,6 @@ function borrarCotizacion(index) {
             cotizacionesRealizadasDiv.style.display = "none";
         }
     }
-}
-
-
-//FUNCIONES CART
-function shoppingCart(index) {
-    const cotizacionadd = cotizaciones [index];
-    cart.push(cotizacionadd)
-    shoppingCartLocalStorage();
-    borrarCotizacion(index);
-    mostrarMensaje("COTIZACION AGREGADA CON EXITO");
-}
-
-function shoppingCartLocalStorage() {
-    localStorage.setItem("shoppingCart", JSON.stringify(cart));
 }
 
 // FUNCION DE MENSAJE AL COTIZAR  //
