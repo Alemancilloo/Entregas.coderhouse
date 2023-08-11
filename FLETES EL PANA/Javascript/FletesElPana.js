@@ -20,6 +20,8 @@ const cotizacionesRealizadasDiv = document.createElement("div");
 //UBICACION DEL DIV EN EL HTML//
 cotizacionesRealizadasDiv.classList.add("cotizaciones-realizadas");
 
+//AJUSTE DE IMPUT EDAD
+ageInput.addEventListener ("input", () => ageInput.value = ageInput.value.replace(/[^0-9]/g, ''));
 
 // IDENTIFICACION DE USUARIO  //
 function verificarUsuario(usuario) {
