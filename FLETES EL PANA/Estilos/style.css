@@ -142,8 +142,9 @@
     background-image: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradiente de colores */
     z-index: 2; /* Asegurarse de que el mensaje tenga un valor de z-index mayor */
     display: none; /* Inicialmente oculto */
-    animation: fadeInOut 6s ease-in-out; /* Nombre de la animación, duración, función de tiempo */
+    animation: fadeInOut 3s ease-in-out; /* Nombre de la animación, duración, función de tiempo */
 }
+/* Esto hace mas suave la entrada y salida de mensaje*/
 @keyframes fadeInOut {
     0% { opacity: 0; }
     50% { opacity: 1; }

@@ -5,6 +5,7 @@ const cotizaciones = [];
 let usuario = "";
 let edad = 0;
 let totalCotizaciones = 0;
+const cart = [];
 
 // CONSTANTES EXTRAIDAS DEL DOM //
 const form = document.getElementById("cotizadorForm");
@@ -22,6 +23,28 @@ cotizacionesRealizadasDiv.classList.add("cotizaciones-realizadas");
 
 //AJUSTE DE IMPUT EDAD
 ageInput.addEventListener ("input", () => ageInput.value = ageInput.value.replace(/[^0-9]/g, ''));
+
+// DESARROLLO DEL INPUT RUT //
+const rutInput2 = document.getElementById('rut');
+function formatRut(input) {
+    // ELIMINAR CARACTERES QUE NO SON NUMEROS EXCEPTO - Y "K"  //
+    input.value = input.value.replace(/[^0-9kK-]/g, '');
+    // DIVIDIR RUT EN PARTE ENTERA Y DIGITO VERIFICADOR (SI LO TIENE)  //
+    const parts = input.value.split('-');
+    let formattedRut = parts[0];
+    // SEPARADOR DE MILES  //
+    formattedRut = formattedRut.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    // REUNIR LAS PARTES CON GUION
+    if (parts.length > 1) {
+        formattedRut += '-' + parts[1];
+    }
+    // ACTUALIZAR EL INPUT CON RUT FORMATEADO  //
+    input.value = formattedRut;
+}
+// ESCUCHAR EL INPUT RUT MIENTRAS SE ESCRIBE  //
+rutInput2.addEventListener('input', function() {
+    formatRut(rutInput2);
+});
 
 // IDENTIFICACION DE USUARIO  //
 function verificarUsuario(usuario) {
@@ -161,7 +184,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
                 cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
                                     Lugar de Carga: ${cotizacion.direccionInicial}<br> 
                                     Lugar de Descarga: ${cotizacion.direccionFinal}<br>
-                                    Costo: $ ${cotizacion.costo} pesos<button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                                    Costo: $ ${cotizacion.costo} pesos  <button onclick="shoppingCart(${index})">Agregar</button>  <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
                 cotizacionesHTML += `</div>`;
             });
             
@@ -202,7 +225,7 @@ function borrarCotizacion(index) {
                 cotizacionesHTML += `<p><b>Cotización ${index + 1}:</b><br>
                                     Lugar de Carga: ${cotizacion.direccionInicial}<br> 
                                     Lugar de Descarga: ${cotizacion.direccionFinal}<br>
-                                    Costo: $ ${cotizacion.costo} pesos<button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
+                                    Costo: $ ${cotizacion.costo} pesos  <button onclick="shoppingCart(${index})">Agregar</button>  <button onclick="borrarCotizacion(${index})">Borrar</button></p>`;
                 cotizacionesHTML += `</div>`;
             });
             
@@ -218,6 +241,20 @@ function borrarCotizacion(index) {
     }
 }
 
+
+//FUNCIONES CART
+function shoppingCart(index) {
+    const cotizacionadd = cotizaciones [index];
+    cart.push(cotizacionadd)
+    shoppingCartLocalStorage();
+    borrarCotizacion(index);
+    mostrarMensaje("COTIZACION AGREGADA CON EXITO");
+}
+
+function shoppingCartLocalStorage() {
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+
 // FUNCION DE MENSAJE AL COTIZAR  //
 function mostrarMensaje(mensaje) {
     const mensajeDiv = document.createElement("div");
@@ -230,28 +267,6 @@ function mostrarMensaje(mensaje) {
     setTimeout(() => {
         mensajeDiv.style.display = "none";
         }, 
-        5000
+        3000
     );
 }
-
-// DESARROLLO DEL CAMPO RUT //
-const rutInput2 = document.getElementById('rut');
-function formatRut(input) {
-    // ELIMINAR CARACTERES QUE NO SON NUMEROS EXCEPTO - Y "K"  //
-    input.value = input.value.replace(/[^0-9kK-]/g, '');
-    // DIVIDIR RUT EN PARTE ENTERA Y DIGITO VERIFICADOR (SI LO TIENE)  //
-    const parts = input.value.split('-');
-    let formattedRut = parts[0];
-    // SEPARADOR DE MILES  //
-    formattedRut = formattedRut.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-    // REUNIR LAS PARTES CON GUION
-    if (parts.length > 1) {
-        formattedRut += '-' + parts[1];
-    }
-    // ACTUALIZAR EL INPUT CON RUT FORMATEADO  //
-    input.value = formattedRut;
-}
-// ESCUCHAR EL INPUT RUT MIENTRAS SE ESCRIBE  //
-rutInput2.addEventListener('input', function() {
-    formatRut(rutInput2);
-});
