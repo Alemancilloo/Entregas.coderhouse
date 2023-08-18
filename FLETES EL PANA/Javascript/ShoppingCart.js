@@ -1,3 +1,8 @@
+//  EJECUCION DE COTIZACIONES AGREGADAS AL CARRITO  //
+interfazCart()
+
+
+// FUNCION PRINCIPAL DEL CARRITO  //
 function shoppingCart(index) {
     const cotizacionadd = cotizaciones [index];
     cart.push(cotizacionadd)
@@ -6,13 +11,14 @@ function shoppingCart(index) {
     borrarCotizacion(index);
     mostrarMensaje("COTIZACION AGREGADA CON EXITO");
 }
-// FUNCION GUARDADO LOCALSTORAGE
+// FUNCION GUARDADO LOCALSTORAGE  //
 function shoppingCartLocalStorage() {
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
 }
-// FUNCION INTERZAS CART
+// FUNCION INTERZAS CONTADOR CARRITO
 function interfazCart() {
-    const contadorCarrito = document.getElementById("contadorCarrito");
-    // ACTUALIZA CONTADOR CART
-    contadorCarrito.innerText = cart.length;  
+    const amountInter = document.getElementById("amount");
+    const dataShoppingAmount = JSON.parse(localStorage.getItem("shoppingCart"));
+    amountInter.innerText = dataShoppingAmount.length;
+    
 }

@@ -178,15 +178,16 @@
     border-radius: 5px;
     cursor: pointer;
 }
-
+            /* ESTILOS DEL CARRITO */
+/* ESTILO DE LA IMAGEN */
 .carrito {
     position: absolute;
     display: block;
     left: 90%;
     top: 1%;
 }
-
-#contadorCarrito {
+/* ESTILO DEL CONTADOR */
+#amount {
     display: inline-block;
     background-color: #f29c65;
     color: white;
