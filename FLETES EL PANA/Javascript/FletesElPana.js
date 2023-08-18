@@ -74,7 +74,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         }
     }
     //  EJECUCION DEL GUARDADO LOCAL-STORAGE
-    localStorage.setItem("Datos", JSON.stringify(user));
+    localStorage.setItem("Data", JSON.stringify(user));
         
         // EJECUCION DE MENSAJE AL COTIZAR //
         if (verificarUsuario(usuario)) {
