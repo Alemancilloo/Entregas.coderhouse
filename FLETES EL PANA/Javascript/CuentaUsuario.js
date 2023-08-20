@@ -1,6 +1,7 @@
 const dataLocal = JSON.parse(localStorage.getItem("Data"));
 const dataCart = JSON.parse(localStorage.getItem("shoppingCart"));
 const aggregateQuotes = document.getElementById("aggregateQuotes");
+const buttonClear2 = document.querySelector(".buttonClear2"); // Usamos querySelector para seleccionar el div por clase
 const newDiv = document.createElement("div");
 newDiv.id = "newDiv";
 newDiv.className = "newDiv";
@@ -60,6 +61,19 @@ if (dataCart !== null) {
     newDiv.appendChild(table);
 } else {
     const newText2 = document.createElement("h2");
+    newText2.className = "h2class"
     newText2.innerHTML = `<center>No hay Cotizaciones Agregadas </center>`;
     newDiv.appendChild(newText2);
 }
+
+// Botón "Borrar Todo"
+const clearAllButton = document.createElement("button");
+clearAllButton.textContent = "Borrar Todo";
+clearAllButton.id = "clearAllButton";
+clearAllButton.classList.add("click1"); // Agrega una clase para darle estilo si es necesario
+clearAllButton.addEventListener("click", () => {
+    localStorage.removeItem("shoppingCart");
+    location.reload(); // Recarga la página para reflejar los cambios
+});
+// Agregar el botón "Borrar Todo" fuera del newDiv
+buttonClear2.appendChild(clearAllButton);
