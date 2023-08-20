@@ -1,7 +1,8 @@
-//  EJECUCION DE COTIZACIONES AGREGADAS AL CARRITO  //
+//  VARIABLES DEL FUNCIONAMIENTO PARA EL CARRITO  //
+let dataShoppingAmount = "";
+dataShoppingAmount = JSON.parse(localStorage.getItem("shoppingCart"));
+//  EJECUCION  //
 interfazCart()
-
-
 // FUNCION PRINCIPAL DEL CARRITO  //
 function shoppingCart(index) {
     const cotizacionadd = cotizaciones [index];
@@ -18,7 +19,9 @@ function shoppingCartLocalStorage() {
 // FUNCION INTERZAS CONTADOR CARRITO
 function interfazCart() {
     const amountInter = document.getElementById("amount");
-    const dataShoppingAmount = JSON.parse(localStorage.getItem("shoppingCart"));
+    dataShoppingAmount = JSON.parse(localStorage.getItem("shoppingCart"));
     amountInter.innerText = dataShoppingAmount.length;
-    
-}
+    }
+
+
+

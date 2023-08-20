@@ -3,6 +3,29 @@
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+footer{
+    background-color: chocolate;
+    font-size: medium;
+    border: 5px ridge black;
+    text-align: center;
+    margin-top: 50px;
+}
+/* IMAGEN DE FONDO INDEX*/
+.background{
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    height: 951.8px;
+    width: 100%;
+}
 
 .redes {
     color: white;
@@ -12,6 +35,7 @@
     font-style: italic;
     padding-left: 30px;
     padding-top: 10px;
+    height: 50px;
 }
 
 .galeriaFotos {
@@ -45,23 +69,31 @@
     margin: 5px;
     margin-left: 20px;
 }
-
+/* LOGO PRINCIPAL FLETES EL PANA */
 .contenedor1 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     line-height: 30px;
+    top: 30px;
+    position: static;
+    text-align: center !important;
+}
+/* CONTENEDOR DEL COTIZADOR */
+.contenedor2 {
+    margin: 10px;
+    position: static;
+}
+
+.contenedor3 {
+    text-align: center;
 }
 
 .logoCentral {
     position: relative;
     top: 80px;
     left: 35px;
-}
-
-.contenedor2 {
-    margin: 10px;
 }
 
 .cotizador {
@@ -96,37 +128,34 @@
 }
 
 .click1 {
-    display: block;
-    margin: 0 auto;
-    font-size: larger;
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 24px;
+    color: white;
+    background-color: darkorange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.click1:hover{
-    font-size: 20px;
+.click1:hover {
+    background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
+    transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
 }
 
 .buttonClear {
-    margin: 0 auto;
+    margin: 10px auto;
     display: block;
     width: 150px;
     height: 30px;
     font-size: 15px;
     font-weight: 900;
+    position: static;
+    margin-top: 20px;
 }
 
-.piePagina {
-    position: relative;
-    margin-top: 100px;
-    top: -10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: chocolate;
-    font-size: medium;
-    border: 5px ridge black;
-    box-shadow: 20px 25px 30px 10px #000;
-    z-index: 1;
-}
 .mensaje {
     position: fixed;
     top: 90%;
@@ -205,15 +234,7 @@
     border: 3px solid black;
 }
  /* Estilados de Cuenta Usuario cotizacion*/
-.newDiv {
-    background-color: #f5f5f5;
-    border: 5px solid #fd4f04;
-    border-radius: 2%;
-    padding: 10px;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 20px;
-}
+
 
 .coti {
     background-color: #fff;
@@ -222,4 +243,41 @@
     font-size: large;
     line-height: 1.5;
     padding-left: 50px;
+}
+
+/* ESTILOS DEL RESUMEN DE LAS COTIZACIONES CUENTA USUARIO*/
+.newDiv {
+    background-color: #f5f5f5;
+    border: 5px solid #000000;
+    border-radius: 2%;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 20px;
+}
+.logoCotizacion {
+    position: absolute;
+    right: 300px;
+}
+.newText3 {
+    font-size: 20px;
+    line-height: 1.5;
+    border-bottom: 3px solid #000000;
+    padding: 15px;
+}
+.cotizaciones-table {
+    border: 2px solid black;
+    margin: 0;
+    width: 100%;
+    line-height: 4;
+    text-align: center;
+}
+thead {
+    font-size: x-large;
+}
+.total-row {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 40px;
+    font-size: large;
 }
