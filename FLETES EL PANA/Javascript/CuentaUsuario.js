@@ -1,7 +1,7 @@
 const dataLocal = JSON.parse(localStorage.getItem("Data"));
 const dataCart = JSON.parse(localStorage.getItem("shoppingCart"));
 const aggregateQuotes = document.getElementById("aggregateQuotes");
-const buttonClear2 = document.querySelector(".buttonClear2"); // Usamos querySelector para seleccionar el div por clase
+const buttons = document.getElementById("buttons");
 const newDiv = document.createElement("div");
 newDiv.id = "newDiv";
 newDiv.className = "newDiv";
@@ -65,15 +65,21 @@ if (dataCart !== null) {
     newText2.innerHTML = `<center>No hay Cotizaciones Agregadas </center>`;
     newDiv.appendChild(newText2);
 }
+// Botón "Pagar" //
+const payButton = document.createElement("Button");
+payButton.textContent = "Pagar";
+payButton.className = "payButton";
+buttons.appendChild(payButton);
 
-// Botón "Borrar Todo"
+// Botón "Borrar Todo" //
 const clearAllButton = document.createElement("button");
-clearAllButton.textContent = "Borrar Todo";
+clearAllButton.textContent = "Borrar";
 clearAllButton.id = "clearAllButton";
-clearAllButton.classList.add("click1"); // Agrega una clase para darle estilo si es necesario
+clearAllButton.classList.add("clickCuenta");
 clearAllButton.addEventListener("click", () => {
     localStorage.removeItem("shoppingCart");
-    location.reload(); // Recarga la página para reflejar los cambios
+    location.reload();
 });
-// Agregar el botón "Borrar Todo" fuera del newDiv
-buttonClear2.appendChild(clearAllButton);
+buttons.appendChild(clearAllButton);
+
+

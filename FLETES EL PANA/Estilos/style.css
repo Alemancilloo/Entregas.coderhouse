@@ -1,8 +1,10 @@
+/* ESTILO GENERAL PARA TODAS LAS PAGINAS */
 * {
     margin: 0;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+/* ESTILO GENREAL PARA ORGANIZACION DEL FOOTER DE TODAS LAS PAGINAS */
 html{
     height: 100%;
 }
@@ -18,15 +20,7 @@ footer{
     text-align: center;
     margin-top: 50px;
 }
-/* IMAGEN DE FONDO INDEX*/
-.background{
-    position: absolute;
-    z-index: -1;
-    opacity: 0.2;
-    height: 951.8px;
-    width: 100%;
-}
-
+/* ESTILO GENERAL PARA EL HEADER DE TODAS LAS PAGINAS */
 .redes {
     color: white;
     background-color: rgb(219, 115, 19);
@@ -37,19 +31,7 @@ footer{
     padding-top: 10px;
     height: 50px;
 }
-
-.galeriaFotos {
-    position: relative;
-    top: -350px;
-    display: flex;
-    align-items: center;
-    /* UBICACIÓN UNO ABAJO DEL OTRO */
-    flex-direction: column;
-    text-align: center;
-    align-content: flex-end;
-    flex-wrap: wrap;
-}
-
+/* ESTILO GENERAL PARA LOS LINK SUPERIORES DE TODAS LAS PAGINAS */
 .linkInternos {
     font-weight: 600;
     font-size: 20px;
@@ -61,15 +43,13 @@ footer{
     border-bottom-left-radius: 20px;
     box-shadow: 20px 25px 30px 10px #000;
 }
-
-.caja1,
-.caja2,
-.caja3 {
+/* CAJAS DE LINK GENERAL TODAS LAS PAGINAS */
+.caja1, .caja2, .caja3 {
     display: inline-block;
     margin: 5px;
     margin-left: 20px;
 }
-/* LOGO PRINCIPAL FLETES EL PANA */
+/* CONTENEDOR DEL LOGO PRINCIPAL FLETES EL PANA TODAS LAS PAGINAS*/
 .contenedor1 {
     display: flex;
     align-items: center;
@@ -80,142 +60,20 @@ footer{
     position: static;
     text-align: center !important;
 }
-/* CONTENEDOR DEL COTIZADOR */
-.contenedor2 {
-    margin: 10px;
-    position: static;
-}
-
-.contenedor3 {
-    text-align: center;
-}
-
+/* LOGO PRINCIPAL FLETES EL PANA TODAS LAS PAGINAS*/
 .logoCentral {
     position: relative;
     top: 80px;
     left: 35px;
 }
-
-.cotizador {
-    border: 5px solid darkorange;
-    padding: 20px;
-    border-radius: 10%;
-    position: relative;
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.miniCuadro {
-    display: flex;
-    justify-content: space-between;
-}
-
-.input-cotizador {
-    flex-grow: 1;
-    margin-left: 10px;
-}
-
-.click {
-    font-size: larger;
-    width: 50%;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-.click1 {
-    display: inline-block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 24px;
-    color: white;
-    background-color: darkorange;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.click1:hover {
-    background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
-    transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
-}
-
-.buttonClear {
-    margin: 10px auto;
-    display: block;
-    width: 150px;
-    height: 30px;
-    font-size: 15px;
-    font-weight: 900;
-    position: static;
-    margin-top: 20px;
-}
-
-.mensaje {
-    position: fixed;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid darkorange;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    color: darkorange;
-    background-image: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradiente de colores */
-    z-index: 2; /* Asegurarse de que el mensaje tenga un valor de z-index mayor */
-    display: none; /* Inicialmente oculto */
-    animation: fadeInOut 3s ease-in-out; /* Nombre de la animación, duración, función de tiempo */
-}
-/* Esto hace mas suave la entrada y salida de mensaje*/
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-.cotizaciones-realizadas {
-    background-color: #f5f5f5;
-    border: 4px solid #ff8c00;
-    border-radius: 2%;
-    padding: 10px;
-    display: none;
-    margin: 50px;
-}
-.cotizacion-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-.cotizacion-item p {
-    margin: 0;
-}
-
-.cotizacion-item button {
-    background-color: darkorange;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-            /* ESTILOS DEL CARRITO */
-/* ESTILO DE LA IMAGEN */
+/* IMAGEN DEL CARRITO DE COMPRAS TODAS LAS PAGINAS */
 .carrito {
     position: absolute;
     display: block;
     left: 90%;
     top: 1%;
 }
-/* ESTILO DEL CONTADOR */
+/* CONTADOR DE CARRITO DE COMPRAS TODAS LAS PAGINAS */
 #amount {
     display: inline-block;
     background-color: #f29c65;
@@ -233,6 +91,142 @@ footer{
     top: -6px;
     border: 3px solid black;
 }
+/* IMAGEN DE FONDO PAGINA INDEX*/
+.background{
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+    height: 951.8px;
+    width: 100%;
+}
+/* ESTILO GALERIAS PAGINA INDEX*/
+.galeriaFotos {
+    position: relative;
+    top: -350px;
+    display: flex;
+    align-items: center;
+    /* UBICACIÓN UNO ABAJO DEL OTRO */
+    flex-direction: column;
+    text-align: center;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+/* CONTENEDOR BOTON DE ENLACE A COTIZADOR INDEX*/
+.contenedor3 {
+    text-align: center;
+}
+/* CONTENEDOR DE LA PAGINA COTIZADOR */
+.contenedor2 {
+    margin: 10px;
+    position: static;
+}
+/* CAJA DE LA PAGINA COTIZADOR */
+.cotizador {
+    border: 5px solid darkorange;
+    padding: 20px;
+    border-radius: 10%;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+/* LABEL DE NOMBRE Y EMAIL DE LA PAGINA COTIZADOR */
+.miniCuadro {
+    display: flex;
+    justify-content: space-between;
+}
+/* INPUT DE NOMBRE Y EMAIL DE LA PAGINA COTIZADOR */
+.input-cotizador {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+/* BOTON DE COTIZAR DE LA PAGINA COTIZADOR */
+.click {
+    font-size: larger;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.click1 {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 24px;
+    color: white;
+    background-color: darkorange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.click1:hover {
+    background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
+    transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
+}
+/* BOTON PARA BORRAR TODO DE LA PAGINA COTIZADOR */
+.buttonClear {
+    margin: 10px auto;
+    display: block;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 900;
+    position: static;
+    margin-top: 20px;
+}
+/* BOTON PARA BORRAR COTIZACION INDIVIDUAL DE LA PAGINA COTIZADOR */
+.cotizacion-item button {
+    background-color: darkorange;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* MENSAJE TEMPORALAL DE LA PAGINA COTIZADOR */
+.mensaje {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid darkorange;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkorange;
+    background-image: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradiente de colores */
+    z-index: 2; /* Asegurarse de que el mensaje tenga un valor de z-index mayor */
+    display: none; /* Inicialmente oculto */
+    animation: fadeInOut 3s ease-in-out; /* Nombre de la animación, duración, función de tiempo */
+}
+@keyframes fadeInOut { /* Esto hace mas suave la entrada y salida de mensaje */ 
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+/* BOX DONDE SE MUESTRAN LAS COTIZACIONES REALIZADAS DE LA PAGINA COTIZADOR */
+.cotizaciones-realizadas {
+    background-color: #f5f5f5;
+    border: 4px solid #ff8c00;
+    border-radius: 2%;
+    padding: 10px;
+    display: none;
+    margin: 50px;
+}
+ /* COTIZACIONES REALIZADAS DE LA PAGINA COTIZADOR */
+.cotizacion-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
  /* Estilados de Cuenta Usuario cotizacion*/
 
 
@@ -281,9 +275,28 @@ thead {
     padding-right: 40px;
     font-size: large;
 }
-.buttonClear2 {
-    margin: 0 auto;
-}
+
 .h2class {
     padding: 10px;
+}
+/* ESTILO BOTONES PAGINA CUENTA USUARIO */
+.clickCuenta, .payButton {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: white;
+    background-color: darkorange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 15px;
+}
+.clickCuenta:hover, .payButton:hover {
+    background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
+    transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
+}
+#buttons {
+    margin: 0 auto;
 }

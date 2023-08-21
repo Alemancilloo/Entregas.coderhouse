@@ -20,8 +20,8 @@ function shoppingCartLocalStorage() {
 function interfazCart() {
     const amountInter = document.getElementById("amount");
     dataShoppingAmount = JSON.parse(localStorage.getItem("shoppingCart"));
+    if(dataShoppingAmount !== null){
     amountInter.innerText = dataShoppingAmount.length;
-    }
-
-
-
+    } else {
+        amountInter.innerText = 0;
+    }}
