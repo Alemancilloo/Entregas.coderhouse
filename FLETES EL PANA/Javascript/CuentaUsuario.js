@@ -65,7 +65,7 @@ if (dataCart !== null) {
     newText2.innerHTML = `<center>No hay Cotizaciones Agregadas </center>`;
     newDiv.appendChild(newText2);
 }
-// Botón "Pagar" //
+// BOTON PAGAR //
 const payButton = document.createElement("Button");
 payButton.textContent = "Pagar";
 payButton.className = "payButton";
@@ -75,7 +75,7 @@ payButton.addEventListener("click", () => {
 buttons.appendChild(payButton);
 
 
-// Botón "Borrar Todo" //
+// BOTON BORRAR TODO //
 const clearAllButton = document.createElement("button");
 clearAllButton.textContent = "Borrar";
 clearAllButton.id = "clearAllButton";

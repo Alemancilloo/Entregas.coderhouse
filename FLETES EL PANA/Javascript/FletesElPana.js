@@ -96,65 +96,23 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         let costoDescarga = 0;
         let costoTotal = 0;
 
-        switch (direccionCarga) {
-            case "1":
-                costoCarga = 10253.20;
-                break;
-            case "2":
-                costoCarga = 12754.13;
-                break;
-            case "3":
-                costoCarga = 13278.18;
-                break;
-            case "4":
-                costoCarga = 11236.99;
-                break;
-            case "5":
-                costoCarga = 15278.52;
-                break;
-            case "6":
-                costoCarga = 8542.17;
-                break;
-            case "7":
-                costoCarga = 10587.25;
-                break;
-            case "8":
-                costoCarga = 14048.52;
-                break;
-            default:
-                costoCarga = 0;
-                break;
+        function calcularCosto(direccion) {
+            const costos = {
+                "1": 10253.20,
+                "2": 12754.13,
+                "3": 13278.18,
+                "4": 11236.99,
+                "5": 15278.52,
+                "6": 8542.17,
+                "7": 10587.25,
+                "8": 14048.52,
+            };
+        
+            return costos[direccion] || 0;
         }
-        switch (direccionDescarga) {
-            case "1":
-                costoDescarga = 10253.20;
-                break;
-            case "2":
-                costoDescarga = 12754.13;
-                break;
-            case "3":
-                costoDescarga = 13278.18;
-                break;
-            case "4":
-                costoDescarga = 11236.99;
-                break;
-            case "5":
-                costoDescarga = 15278.52;
-                break;
-            case "6":
-                costoDescarga = 8542.17;
-                break;
-            case "7":
-                costoDescarga = 10587.25;
-                break;
-            case "8":
-                costoDescarga = 14048.52;
-                break;
-            default:
-                costoDescarga = 0;
-                break;
-        }
-
+        
+        costoCarga = calcularCosto(direccionCarga);
+        costoDescarga = calcularCosto(direccionDescarga);
         costoTotal = Math.round(costoCarga + costoDescarga);
 
         const cotizacion = {
