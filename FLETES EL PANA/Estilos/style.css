@@ -118,6 +118,24 @@ footer{
 .contenedor3 {
     text-align: center;
 }
+/* BOTON CLICK AQUI INDEX */
+.buttonClick {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 25px;
+    color: white;
+    background-color: darkorange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 15px;
+}
+.buttonClick:hover {
+    background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
+    transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
+}
 /* AJUSTE DE ESPACIO */
 .add {
     height: 300px;
