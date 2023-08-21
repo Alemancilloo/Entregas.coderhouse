@@ -140,6 +140,7 @@ footer{
     flex-wrap: nowrap;
     line-height: 1.2;
     margin-bottom: 10px;
+    background: wheat;
 }
 /* LABEL DE NOMBRE Y EMAIL DE LA PAGINA COTIZADOR */
 .miniCuadro {
