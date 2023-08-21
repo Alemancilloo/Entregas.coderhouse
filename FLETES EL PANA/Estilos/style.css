@@ -226,19 +226,6 @@ footer{
     padding: 5px;
     margin-bottom: 10px;
 }
-
- /* Estilados de Cuenta Usuario cotizacion*/
-
-
-.coti {
-    background-color: #fff;
-    margin: 10px;
-    padding: 5px;
-    font-size: large;
-    line-height: 1.5;
-    padding-left: 50px;
-}
-
 /* ESTILOS DEL RESUMEN DE LAS COTIZACIONES CUENTA USUARIO*/
 .newDiv {
     background-color: #f5f5f5;
@@ -248,16 +235,19 @@ footer{
     margin-right: 300px;
     margin-top: 20px;
 }
+/* LOGO DENTRO DE LA COTIZACION CUENTA USUARIO */
 .logoCotizacion {
     position: absolute;
     right: 300px;
 }
+/* TEXTO SUPERIOR DATOS USUARIO CUENTA USUARIO */
 .newText3 {
     font-size: 20px;
     line-height: 1.5;
     border-bottom: 3px solid #000000;
     padding: 15px;
 }
+/* TABLA DE LAS COTIZACIONES CUENTA USUSARIO */
 .cotizaciones-table {
     border: 2px solid black;
     margin: 0;
@@ -265,9 +255,11 @@ footer{
     line-height: 4;
     text-align: center;
 }
+/* SUBTITULOS COMPRA DESCRIPCION Y COSTO CUENTA USUARIO */
 thead {
     font-size: x-large;
 }
+/* TOTAL A PAGAR CUENTA USUARIO */
 .total-row {
     background-color: #f5f5f5;
     font-weight: bold;
@@ -275,7 +267,7 @@ thead {
     padding-right: 40px;
     font-size: large;
 }
-
+/* SUBTITULO COTIZACIONES CUENTA USUARIO */
 .h2class {
     padding: 10px;
 }

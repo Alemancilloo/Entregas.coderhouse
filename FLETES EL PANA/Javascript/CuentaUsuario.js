@@ -69,7 +69,11 @@ if (dataCart !== null) {
 const payButton = document.createElement("Button");
 payButton.textContent = "Pagar";
 payButton.className = "payButton";
+payButton.addEventListener("click", () => {
+    alert("Fuera de Servicio, Intente mas Tarde");
+})
 buttons.appendChild(payButton);
+
 
 // Botón "Borrar Todo" //
 const clearAllButton = document.createElement("button");
