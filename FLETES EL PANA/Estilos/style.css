@@ -101,19 +101,26 @@ footer{
 }
 /* ESTILO GALERIAS PAGINA INDEX*/
 .galeriaFotos {
-    position: relative;
-    top: -350px;
-    display: flex;
-    align-items: center;
-    /* UBICACIÓN UNO ABAJO DEL OTRO */
-    flex-direction: column;
-    text-align: center;
-    align-content: flex-end;
-    flex-wrap: wrap;
+    background: #ffd197;
+    border-radius: 2%;
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    padding: 10px;
+    line-height: 2;
+    left: 85.3%;
+    top: 27%;
+}
+.galeriaFotos img {
+    margin-bottom: 20px; /* Ajusta espacio entre las imágenes */
 }
 /* CONTENEDOR BOTON DE ENLACE A COTIZADOR INDEX*/
 .contenedor3 {
     text-align: center;
+}
+/* AJUSTE DE ESPACIO */
+.add {
+    height: 300px;
 }
 /* CONTENEDOR DE LA PAGINA COTIZADOR */
 .contenedor2 {
@@ -201,7 +208,7 @@ footer{
     font-weight: bold;
     color: darkorange;
     background-image: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradiente de colores */
-    z-index: 2; /* Asegurarse de que el mensaje tenga un valor de z-index mayor */
+    z-index: 2;
     display: none; /* Inicialmente oculto */
     animation: fadeInOut 3s ease-in-out; /* Nombre de la animación, duración, función de tiempo */
 }
@@ -218,13 +225,17 @@ footer{
     padding: 10px;
     display: none;
     margin: 50px;
+    margin-left: 180px;
+    margin-right: 180px;
 }
  /* COTIZACIONES REALIZADAS DE LA PAGINA COTIZADOR */
 .cotizacion-item {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #ff8c00;
     padding: 5px;
     margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5%;
 }
 /* ESTILOS DEL RESUMEN DE LAS COTIZACIONES CUENTA USUARIO*/
 .newDiv {
