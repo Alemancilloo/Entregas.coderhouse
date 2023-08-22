@@ -56,7 +56,6 @@ footer{
     justify-content: center;
     flex-direction: column;
     line-height: 30px;
-    top: 30px;
     position: static;
     text-align: center !important;
 }
@@ -321,4 +320,13 @@ thead {
 }
 #buttons {
     margin: 0 auto;
+}
+/* BOTON DE LIBRERIA SWEETALERT CUENTA USUARIO */
+.swal-button {
+    background-color: #ff8c00;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.swal-button:not([disabled]):hover {
+    background-color: #ff8c00;
+    transform: scale(1.1); 
 }

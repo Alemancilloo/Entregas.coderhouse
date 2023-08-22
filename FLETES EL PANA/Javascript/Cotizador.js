@@ -95,7 +95,7 @@ if (form && usernameInput && rutInput && ageInput && emailInput && cotizacionesR
         let costoCarga = 0;
         let costoDescarga = 0;
         let costoTotal = 0;
-
+        // COSTOS DE DIRECCIONES //
         function calcularCosto(direccion) {
             const costos = {
                 "1": 10253.20,
