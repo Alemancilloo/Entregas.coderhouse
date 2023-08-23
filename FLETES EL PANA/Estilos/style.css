@@ -386,6 +386,7 @@ thead {
     list-style-position: inside;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
+    border: 2px solid black;
 }
 .textSettings {
     text-indent: 3em;
@@ -459,3 +460,47 @@ thead {
     width: 250px;
     height: 150px;
 }
+
+#generalComments {
+    width: 80%;
+    height: 160px;
+    background: #ff8c00;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 40px;
+    overflow: overlay;
+}
+
+#container5 {
+    width: 60%;
+    height: 300px;
+    background: #ff8c00;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 40px;
+    border-radius: 5%;
+    border: 2px solid black;
+    box-shadow: 1px 2px 20px 1px #000;
+}
+
+.comment {
+    background: rgb(250 239 225);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    box-shadow: 1px 2px 20px 1px #000;
+    line-height: 1.5;
+}
+ .titleSala {
+    border: 2px solid black;
+    padding: 7px;
+    margin: 0 auto;
+    box-shadow: 1px 2px 20px 1px #000;
+    background: #faefe1;
+    border-radius: 5%;
+    position: relative;
+    margin: 0 auto;
+    display: table;
+    width: 300px;
+    text-align: center;
+ }
