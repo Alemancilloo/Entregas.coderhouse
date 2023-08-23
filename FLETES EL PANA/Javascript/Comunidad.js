@@ -4,13 +4,13 @@ btnToggle.addEventListener('click', function () {
 });
 
 
-// Obtener comentarios del LocalStorage al cargar la página
+// EXRTRACCION COMENTARIOS DEL LOCALSTORAGE PARA PAGINA  //
 const ComentariosGenerales = JSON.parse(localStorage.getItem("Comentarios")) || [];
 
-// Función para mostrar los comentarios en el DOM
+// FUNCION PARA COMENTARIOS EN EL DOM  //
 function mostrarComentariosEnDOM(comentarios) {
   const generalComments = document.getElementById("generalComments");
-  generalComments.innerHTML = ""; // Limpiamos el contenido actual
+  generalComments.innerHTML = "";
 
 
 const comentDownload = document.createElement("p");
@@ -36,20 +36,19 @@ generalComments.appendChild(comentDownload2);
   });
 }
 
-// Mostrar los comentarios en el DOM al cargar la página
+// MOSTRAR COMENTARIOS EN EL DOM AL CARGAR PAGINA
 mostrarComentariosEnDOM(ComentariosGenerales);
 
-
-
-
+// VARIABLES DEL SIDEBAR DE COMUNIDAD  //
 const enviarButton = document.querySelector(".texTareaButton");
 const texTarea = document.getElementById("texTarea");
 const nombreInput = document.querySelector("input[type='text']");
 
+// FUNCIONALIDAD DEL SIDEBAR COMUNIDAD  //
 enviarButton.addEventListener("click", function () {
   const comentario = texTarea.value;
   const nombre = nombreInput.value;
-
+  // FUNCIONALIDAD DE PROMESA PARA COMPROBACION DE DATOS INGRESADOS //
   const validarNombre = new Promise((resolve, reject) => {
     if (nombre.trim() === "") {
       reject("Campo incompleto");
@@ -65,20 +64,15 @@ enviarButton.addEventListener("click", function () {
           nombre: nombre,
           comentario: comentario
         };
-
         ComentariosGenerales.push(comentarioObj);
-
-
         localStorage.setItem("Comentarios", JSON.stringify(ComentariosGenerales));
         window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
         const nuevoComentario = document.createElement("p");
         nuevoComentario.classList.add("comment");
-
         nuevoComentario.style.marginBottom = "10px";
         nuevoComentario.innerHTML = `<h2>${nombre}</h2> ${comentario}`;
-
+        // AGREGADO DEL NUEVO COMENTARIO AL DOM  //
         generalComments.appendChild(nuevoComentario);
-
         texTarea.value = "";
         nombreInput.value = "";
       }

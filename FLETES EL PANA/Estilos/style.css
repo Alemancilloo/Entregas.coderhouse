@@ -86,7 +86,7 @@ footer{
     font-size: 18px;
     margin: 0;
     position: absolute;
-    z-index: 1;
+    z-index: 19;
     left: 65px;
     top: -6px;
     border: 3px solid black;
@@ -101,15 +101,17 @@ footer{
 }
 /* ESTILO GALERIAS PAGINA INDEX*/
 .galeriaFotos {
-    background: #ffd197;
+    background: black;
     border-radius: 2%;
     position: absolute;
     display: grid;
     justify-items: center;
     padding: 10px;
     line-height: 2;
-    left: 85.3%;
-    top: 27%;
+    top: 0;
+    height: 100%;
+    color: white;
+    box-shadow: 1px 2px 20px 1px #000;
 }
 .galeriaFotos img {
     margin-bottom: 20px; /* Ajusta espacio entre las imágenes */
@@ -144,6 +146,8 @@ footer{
 .galeriaFotos img {
     height: 100px;
     transition: transform 0.2s;
+    border: 5px solid #ff8c00;
+    border-radius: 2%;
 }
 
 .galeriaFotos img:hover {
@@ -403,11 +407,12 @@ thead {
 
 #sidebar {
     position: fixed;
-    width: 280px;
+    left: 0px;
     height: 100%;
     background: #151719;
     left: -280px;
     transition: all 500ms linear;
+    width: 280px;
 }
 #sidebar.active {
     left: 0px;
@@ -424,7 +429,7 @@ thead {
 
 #sidebar .toggle-btn {
     position: absolute;
-    left: 230px;
+    right: -230px;
     top: 20px;
     cursor: pointer;
 }
@@ -436,7 +441,7 @@ thead {
     border: 3px solid #000;
     position: absolute;
     top: 290px;
-    left: -90px;
+    left: -365px;
     background: darkorange;
     border-radius: 0 0 20% 20%;
     box-shadow: 1px 2px 20px 1px #000;
@@ -504,3 +509,55 @@ thead {
     width: 300px;
     text-align: center;
  }
+
+
+
+
+
+
+
+
+ #sidebarIndex {
+    display: block;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    position: fixed;
+    top: 0px;
+    right: -305px;
+    padding-top: 10px;
+    z-index: 20;
+    height: 100%;
+    transition: all 500ms linear;
+    margin: 0 auto;
+    z-index: 20;
+}
+#sidebarIndex.active {  
+    right: 0px;
+}
+ #sidebarIndex .toggle-btn-index {  
+    position: absolute;
+    right: 300px;
+    top: 20px;
+    cursor: pointer;
+ }
+ .textSideIndex {
+    display: block;
+    width: 300px;
+    text-align: center;
+    font-size: 25px;
+    border: 3px solid #000;
+    position: absolute;
+    background: darkorange;
+    border-radius: 0 0 20% 20%;
+    box-shadow: 1px 2px 20px 1px #000;
+    padding-top: 10px;
+    z-index: 20;
+    right: -135px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    top: 290px;
+    padding-bottom: 5px;
+}
+}
+

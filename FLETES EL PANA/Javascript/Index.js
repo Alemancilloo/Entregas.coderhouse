@@ -8,6 +8,7 @@ buttonDiv.appendChild(buttonClick);
 buttonClick.addEventListener("click", () => {
     window.location.href = "./Cotizador.html";
 })
+
 // FUNCIONAMIENTO DE INTERACCION CON LAS IMAGENES //
 const images = document.querySelectorAll('.galeriaFotos a');
 const modal = document.getElementById('imageModal');
@@ -23,6 +24,11 @@ images.forEach(image => {
     });
 });
 
+// FUNCION PARA BOTON SIDEBAR INDEX //
 closeModal.addEventListener('click', function() {
     modal.style.display = 'none';
+});
+const btnToggle = document.querySelector('.toggle-btn-index');
+btnToggle.addEventListener('click', function () {
+  document.getElementById('sidebarIndex').classList.toggle('active');
 });

@@ -1,3 +1,4 @@
+// VARIABLES GENERALES  //
 const dataLocal = JSON.parse(localStorage.getItem("Data"));
 const dataCart = JSON.parse(localStorage.getItem("shoppingCart"));
 const aggregateQuotes = document.getElementById("aggregateQuotes");
@@ -7,6 +8,7 @@ newDiv.id = "newDiv";
 newDiv.className = "newDiv";
 aggregateQuotes.appendChild(newDiv);
 
+// FUNCIONAMIENTO DE EXTRACCION Y COLOCACION DE DATOS EN EL DOM  //
 if (dataCart !== null) {
     const newText3 = document.createElement("div");
     newText3.className = "newText3";
