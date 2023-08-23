@@ -39,8 +39,8 @@ footer{
     background-color: rgb(247, 163, 85);
     padding-top: 10px;
     height: 50px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     box-shadow: 20px 25px 30px 10px #000;
 }
 /* CAJAS DE LINK GENERAL TODAS LAS PAGINAS */
@@ -56,8 +56,9 @@ footer{
     justify-content: center;
     flex-direction: column;
     line-height: 30px;
-    position: static;
+    position: relative;
     text-align: center !important;
+    z-index: -1;
 }
 /* LOGO PRINCIPAL FLETES EL PANA TODAS LAS PAGINAS*/
 .logoCentral {
@@ -134,6 +135,47 @@ footer{
 .buttonClick:hover {
     background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
     transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
+}
+/* BOX GALERIA DE FOTOS INDEX */
+.galeriaFotos a {
+    display: inline-block;
+}
+
+.galeriaFotos img {
+    height: 100px;
+    transition: transform 0.2s;
+}
+
+.galeriaFotos img:hover {
+    transform: scale(1.1);
+}
+/* BOX DONDE SE MUESTRAN FOTOS ASL CLICK INDEX */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+}
+.modal img {
+    display: block;
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+    margin-top: 5%;
+}
+.close {
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
 }
 /* AJUSTE DE ESPACIO */
 .add {
@@ -301,7 +343,7 @@ thead {
     padding: 10px;
 }
 /* ESTILO BOTONES PAGINA CUENTA USUARIO */
-.clickCuenta, .payButton {
+.clickCuenta, .payButton, .texTareaButton {
     display: inline-block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -314,7 +356,7 @@ thead {
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin: 15px;
 }
-.clickCuenta:hover, .payButton:hover {
+.clickCuenta:hover, .payButton:hover, .texTareaButton:hover {
     background-color: #ff8c00; /* Cambiar el color al pasar el cursor por encima */
     transform: scale(1.05); /* Hacer que el botón se agrande ligeramente al pasar el cursor por encima */
 }
@@ -329,4 +371,91 @@ thead {
 .swal-button:not([disabled]):hover {
     background-color: #ff8c00;
     transform: scale(1.1); 
+}
+
+.bodyCommunity {
+    background-color: wheat;
+}
+.article {
+    background-color: #faefe1;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 2%;
+    line-height: 2;
+    list-style-position: inside;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+.textSettings {
+    text-indent: 3em;
+    text-align: justify;
+}
+.article ul {
+    padding-left: 3em; 
+    text-align: justify
+}
+.subTitle {
+    text-indent: 1em;
+}
+
+
+#sidebar {
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    background: #151719;
+    left: -280px;
+    transition: all 500ms linear;
+}
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: rgba(230, 230, 230, .9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, .3);
+    text-align: center;
+}
+
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+    cursor: pointer;
+}
+#sidebar .toggle-btn span {
+    display: block;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    border: 3px solid #000;
+    position: absolute;
+    top: 290px;
+    left: -90px;
+    background: darkorange;
+    border-radius: 0 0 20% 20%;
+    box-shadow: 1px 2px 20px 1px #000;
+    padding-top: 10px;
+    z-index: 20;
+}
+.logoSideBar {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto; 
+}
+.textSide {
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg); 
+}
+
+#texTarea {
+    font-size: 20px;
+    text-align: justify;
+    word-wrap: break-word;
+    width: 250px;
+    height: 150px;
 }

@@ -39,7 +39,7 @@ if (dataCart !== null) {
         const row = document.createElement("tr");
         const costoNumerico = parseFloat(cotizacion.costo.replace(".", "").replace(",", "."));
         const costoFormateado = costoNumerico.toLocaleString("es-CL", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-        const columns = [`Cotización ${index + 1}`, ` DESDE: ${cotizacion.direccionInicial}  HASTA: ${cotizacion.direccionFinal}`, `$ ${costoFormateado}`];
+        const columns = [`Cotización ${index + 1}`, `Desde: ${cotizacion.direccionInicial},  Hasta: ${cotizacion.direccionFinal}`, `$ ${costoFormateado}`];
 
         columns.forEach(columnText => {
             const td = document.createElement("td");
